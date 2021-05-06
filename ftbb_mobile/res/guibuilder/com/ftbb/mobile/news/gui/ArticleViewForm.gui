@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" layout="LayeredLayout" layeredLayoutPreferredWidthMM="0.0" layeredLayoutPreferredHeightMM="0.0"  autolayout="true" title="ArticleViewForm" scrollableY="true" name="ArticleViewForm">
+  <component type="Label" uiid="title" text="title" styles="bgColor:ff7e79; fgColor:ff7e79;" preferredSize="114.021164mm 19.047619mm" gap="2" name="title">
+    <layoutConstraint insets="28.794992% 2.3809521mm auto 3.1746032mm" referenceComponents="-1 -1 -1 -1" referencePositions="0.0 0.0 0.0 0.0" />
+  </component>
+  <component type="ImageViewer" uiid="photo" preferredSize="114.55026mm 50.0mm" name="Image_Viewer">
+    <layoutConstraint insets="2.6455026mm 0.0mm -5.026456mm 0.0mm" referenceComponents="-1 0 0 0 " referencePositions="0.0 0.0 1.0 0.0" />
+  </component>
+  <component type="Label" text="text" preferredSize="115.07937mm 94.97355mm" textPosition="0" name="text">
+    <layoutConstraint insets="0.0mm -1.0582023mm 4.2328033mm 0.0mm" referenceComponents="0 0 -1 0 " referencePositions="1.0 0.0 0.0 0.0" />
+  </component>
+</component>

@@ -50,6 +50,7 @@ public class ServiceArticle {
                 //Création des tâches et récupération de leurs données
                 Article t = new Article();
                 t.setTitle(obj.get("title").toString());
+                //t.setArticle_id(Integer.parseInt(obj.get("article_id").toString()));
                 t.setText(obj.get("text").toString());
                 t.setDate(obj.get("date").toString());
                 t.setPhoto_url(obj.get("photoUrl").toString());

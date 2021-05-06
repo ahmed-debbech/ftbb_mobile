@@ -11,6 +11,8 @@ import com.codename1.ui.Image;
 import com.codename1.ui.Label;
 import com.codename1.ui.TextComponent;
 import com.codename1.ui.URLImage;
+import com.codename1.ui.events.ActionEvent;
+import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.TextModeLayout;
@@ -26,6 +28,7 @@ import java.util.Map;
 
 public class ClientArticlesForm extends Form{
     Form current;
+    String [] files = new String[500];
     public ClientArticlesForm(){
         current = this;
         setTitle("Articles");
@@ -39,22 +42,32 @@ public class ClientArticlesForm extends Form{
         int i = 0;
         for(Article x : l){
             Image image = URLImage.createToStorage(placeholder, "icon"+i, x.getPhoto_url());
-            data.add(createListEntry(x.getTitle(), x.getDate().toString(), x.getText(), image));
+            files[i] = "icon"+i;
+            data.add(createListEntry(x.getArticle_id(), x.getTitle(), x.getDate().toString(), x.getText(), image));
             i++;
         }
         DefaultListModel<Map<String, Object>> model = new DefaultListModel<>(data);
         MultiList list = new MultiList(model);
         
-        
+        list.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                Map<String, Object> value = (Map<String, Object>)list.getSelectedItem();
+                Article aa = new Article();
+                aa.setTitle(value.get("Line1").toString());
+                new ArticleViewForm(aa, files[list.getSelectedIndex()]).show();
+            }
+        });
         super.add(BorderLayout.CENTER, list);
     }
-    private Map<String, Object> createListEntry(String title, String date, String text, Image icon) {
+    private Map<String, Object> createListEntry(int id, String title, String date, String text, Image icon) {
         Map<String, Object> entry = new HashMap<>();
         entry.put("Line1", title);
         entry.put("Line2", text);
         entry.put("Line3", Utilities.dateOnly(date));
         entry.put("Line4", "0 - likes    0 - comments");
         entry.put("icon", icon);
+        entry.put("id", id);
         return entry;
     }
 }
