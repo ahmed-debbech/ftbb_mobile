@@ -4,9 +4,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/ahmed/Desktop/ftbb_mobile/ftbb_mobile/src/com/ftbb/mobile/MainApp.java</file>
-            <file>file:/home/ahmed/Desktop/ftbb_mobile/ftbb_mobile/build.xml</file>
-            <file>file:/home/ahmed/Desktop/ftbb_mobile/ftbb_mobile/src/com/ftbb/mobile/news/ClientArticlesForm.java</file>
+            <file>file:/home/ahmed/Desktop/ftbb_mobile/ftbb_mobile/src/com/ftbb/mobile/news/entity/Article.java</file>
+            <file>file:/home/ahmed/Desktop/ftbb_mobile/ftbb_mobile/src/com/ftbb/mobile/news/services/ServiceArticle.java</file>
+            <file>file:/home/ahmed/Desktop/ftbb_mobile/ftbb_mobile/src/com/ftbb/mobile/news/gui/ClientArticlesForm.java</file>
+            <file>file:/home/ahmed/Desktop/ftbb_mobile/ftbb_mobile/src/com/ftbb/mobile/news/gui/ArticleItem.java</file>
         </group>
     </open-files>
 </project-private>

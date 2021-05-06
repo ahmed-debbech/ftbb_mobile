@@ -26,6 +26,7 @@ public class Article {
     private String photo_url;
     private int category;
     private String admin_name;
+    private String date;
     
     public Article(int id){
         this.article_id =id;
@@ -237,6 +238,20 @@ public class Article {
      */
     public void setAdmin_name(String admin_name) {
         this.admin_name = admin_name;
+    }
+
+    /**
+     * @return the date
+     */
+    public String getDate() {
+        return date;
+    }
+
+    /**
+     * @param date the date to set
+     */
+    public void setDate(String date) {
+        this.date = date;
     }
 
   
