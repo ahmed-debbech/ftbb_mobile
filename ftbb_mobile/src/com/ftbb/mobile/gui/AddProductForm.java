@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.myapp.gui;
+package com.ftbb.mobile.gui;
 
 import com.codename1.ui.Button;
 import com.codename1.ui.Command;
@@ -14,8 +14,8 @@ import com.codename1.ui.TextField;
 import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.layouts.BoxLayout;
-import com.mycompany.myapp.entities.Product;
-import com.mycompany.myapp.services.ServicesProduct;
+import com.ftbb.mobile.entities.Product;
+import com.ftbb.mobile.services.ServicesProduct;
 
 /**
  *
@@ -48,7 +48,7 @@ public class AddProductForm extends Form{
                     try{
                         Product p = new Product(333, Integer.parseInt(tfStock.getText()),Integer.parseInt(tfPrice.getText()),Integer.parseInt(tfIdAdmin.getText()),tfCategory.getText(),tfName.getText(),tfDetails.getText(),tfPhoto.getText());
                         //Invoquer la methode d'ajout 
-                        if(new  ServicesProduct().addProduct(p))
+                        if(ServicesProduct.getInstance().addProduct(p))
                         {
                             Dialog.show("Success", "connection accepted", new Command("OK"));
                         }

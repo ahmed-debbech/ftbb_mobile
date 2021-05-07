@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.myapp.entities;
+package com.ftbb.mobile.entities;
 
 
 /**
@@ -34,6 +34,9 @@ public class Product {
         this.name = name;
         this.details = details;
         this.photo = photo;
+    }
+
+    public Product() {
     }
     
 
