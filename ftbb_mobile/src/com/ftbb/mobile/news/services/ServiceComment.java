@@ -11,71 +11,72 @@ import com.codename1.io.JSONParser;
 import com.codename1.io.NetworkEvent;
 import com.codename1.io.NetworkManager;
 import com.codename1.ui.events.ActionListener;
+import com.ftbb.mobile.news.entity.Article;
+import com.ftbb.mobile.news.entity.Comment;
+import com.ftbb.mobile.news.utils.Statics;
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import com.ftbb.mobile.news.entity.Article;
-import com.ftbb.mobile.news.utils.Statics;
 
 /**
  *
- * @author bhk
+ * @author root
  */
-public class ServiceArticle {
-
-    
-    private static ServiceArticle instance=null;
+public class ServiceComment {
+    private static ServiceComment instance=null;
     public boolean resultOK;
     private ConnectionRequest req;
-    private ArrayList<Article> articles=new ArrayList<>();
-
-    private ServiceArticle() {
+    private ArrayList<Comment> comments=new ArrayList<>();
+    
+    private ServiceComment() {
          req = new ConnectionRequest();
     }
-
-    public static ServiceArticle getInstance() {
+    public static ServiceComment getInstance() {
         if (instance == null) {
-            instance = new ServiceArticle();
+            instance = new ServiceComment();
         }
         return instance;
     }
-
-    public ArrayList<Article> parseTasks(String jsonText){
+    
+    public ArrayList<Comment> parseTasks(String jsonText){
         try {
             JSONParser j = new JSONParser();
             Map<String,Object> tasksListJson = j.parseJSON(new CharArrayReader(jsonText.toCharArray()));
             List<Map<String,Object>> list = (List<Map<String,Object>>)tasksListJson.get("root");
             for(Map<String,Object> obj : list){
                 //Création des tâches et récupération de leurs données
-                Article t = new Article();
-                t.setTitle(obj.get("title").toString());
-                t.setArticle_id((int) Float.parseFloat(obj.get("articleId").toString()));
-                t.setText(obj.get("text").toString());
-                t.setDate(obj.get("date").toString());
-                t.setPhoto_url(obj.get("photoUrl").toString());
+                Comment t = new Comment();
+                t.setId((int) Float.parseFloat(obj.get("id").toString()));
+                t.setContent(obj.get("content").toString());
+                String dat = obj.get("date").toString().substring(0,19);
+                dat = dat.replace('T', ' ');
+                System.out.println("dattt " + dat);
+                t.setDate(Timestamp.valueOf(dat));
                 //Ajouter la tâche extraite de la réponse Json à la liste
-                articles.add(t);
+                comments.add(t);
             }
              
         } catch (IOException ex) {
             System.out.println("An error occured");
         }
-        return articles;
+        return comments;
     }
     
-    public ArrayList<Article> getAllArticles(){
-        String url = Statics.BASE_URL+"/articles/get/all";
+    public ArrayList<Comment> getAllComments(int art){
+        String url = Statics.BASE_URL+"/comments/get/"+art;
         req.setUrl(url);
         req.setPost(false);
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
             public void actionPerformed(NetworkEvent evt) {
-                articles = parseTasks(new String(req.getResponseData()));
+                comments = parseTasks(new String(req.getResponseData()));
                 req.removeResponseListener(this);
             }
         });
         NetworkManager.getInstance().addToQueueAndWait(req);
-        return articles;
+        return comments;
     }
+
 }

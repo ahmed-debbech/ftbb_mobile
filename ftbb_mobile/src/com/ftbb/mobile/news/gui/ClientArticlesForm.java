@@ -54,7 +54,9 @@ public class ClientArticlesForm extends Form{
             public void actionPerformed(ActionEvent evt) {
                 Map<String, Object> value = (Map<String, Object>)list.getSelectedItem();
                 Article aa = new Article();
+                aa.setArticle_id(Integer.parseInt(value.get("id").toString()));
                 aa.setTitle(value.get("Line1").toString());
+                aa.setText(value.get("Line2").toString());
                 new ArticleViewForm(aa, files[list.getSelectedIndex()]).show();
             }
         });
