@@ -6,6 +6,7 @@
 package com.ftbb.mobile.Report.gui;
 
 import com.codename1.ui.Button;
+import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
 import com.codename1.ui.layouts.BoxLayout;
 
@@ -27,5 +28,6 @@ public class HomeReport extends Form {
         listReportsBtn.addActionListener(x-> new ListReportsForm().show());
         
         this.addAll(addReportBtn, listReportsBtn);
+        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new HomeForAll().showBack());
     }
 }

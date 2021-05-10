@@ -52,7 +52,7 @@ public class ReportService {
     //ADD TASK 
     public boolean addReportAction(Report r){
         
-        String url = Statics.BASE_URL + "/reportapi/"+r.getReport_id()+"/"+r.getClient_id()+"/"+ r.getCommand_id() + "/" +r.getReport_date()+"/"+ r.getEmail()+"/"+r.getDescription();
+        String url = Statics.BASE_URL + "/reportapi?commandId="+ r.getCommand_id() + "&email="+ r.getEmail()+"&description="+r.getDescription();
         req.setUrl(url);
         req.setPost(false);
         req.addResponseListener((evt) -> {

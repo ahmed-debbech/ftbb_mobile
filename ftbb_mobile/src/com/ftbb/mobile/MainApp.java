@@ -13,6 +13,8 @@ import com.codename1.ui.Toolbar;
 import java.io.IOException;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.io.NetworkEvent;
+import com.ftbb.mobile.Report.gui.HomeFeedback;
+import com.ftbb.mobile.Report.gui.HomeForAll;
 import com.ftbb.mobile.Report.gui.HomeReport;
 
 /**
@@ -48,7 +50,7 @@ public class MainApp {
     }
     
     public void start() {
-                new HomeReport().show();
+                new HomeForAll().show();
 
     }
 

@@ -58,6 +58,7 @@ public class AddReportForm extends Form{
             
         });
         
+        
         this.addAll(tfcommandid, tfemail,tfdesc, submitReportBtn);
         getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new HomeReport().showBack());
         
