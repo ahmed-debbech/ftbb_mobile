@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Container" name="pollview" cloudDestinationProperty="pollview" uiid="pollview" layout="BoxLayout" boxLayoutAxis="Y" >
+  <component type="Label" name="polldesc" cloudDestinationProperty="polldesc" uiid="polldesc" text="description" >
+  </component>
+  <component type="SpanLabel" name="SpanLabel" cloudDestinationProperty="SpanLabel" uiid="SpanLabel" >
+  </component>
+  <component type="Label" name="Label1" cloudDestinationProperty="Label1" text="Label1" >
+  </component>
+</component>
