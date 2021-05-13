@@ -14,10 +14,17 @@
     <layoutConstraint insets="0.0mm auto auto 0.0mm" referenceComponents="2 -1 -1 1 " referencePositions="1.0 0.0 0.0 0.0" />
     <component type="Label" uiid="com" text="Comments - 0" name="commentlab">
     </component>
-    <component type="ImageViewer" uiid="art_like_but" name="art_like_but">
+    <component type="Button" uiid="art_like_but" icon="resFile:like.png" name="art_like_but">
     </component>
   </component>
-  <component type="Container" layout="BoxLayout" boxLayoutAxis="Y"  styles="bgColor:fce8d0; alignment:center;" preferredSize="118.51852mm 42.32804mm" scrollableY="false" name="comments">
-    <layoutConstraint insets="auto -5.9604645E-8mm auto 0.0mm" referenceComponents="3 0 -1 0 " referencePositions="1.0 0.0 0.0 0.0" />
+  <component type="Container" layout="BoxLayout" boxLayoutAxis="Y"  styles="bgColor:fce8d0; alignment:center;" preferredSize="118.51852mm 41.00529mm" scrollableY="false" name="comments">
+    <layoutConstraint insets="0.0mm -5.9604645E-8mm 0.0mm 0.0mm" referenceComponents="3 0 5 0 " referencePositions="1.0 0.0 1.0 0.0" />
+  </component>
+  <component type="Container" layout="BoxLayout" boxLayoutAxis="X"  preferredSize="110.05291mm 10.8465605mm" scrollableY="false" name="Box_Layout_X">
+    <layoutConstraint insets="auto 0.0mm 0.0mm 0.0mm" referenceComponents="-1 -1 -1 -1" referencePositions="0.0 0.0 0.0 0.0" />
+    <component type="TextField" columns="13" name="TextField">
+    </component>
+    <component type="Button" text="Comment" name="Button">
+    </component>
   </component>
 </component>
