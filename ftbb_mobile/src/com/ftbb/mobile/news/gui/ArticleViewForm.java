@@ -22,7 +22,10 @@ import com.ftbb.mobile.news.entity.Article;
 import com.ftbb.mobile.news.entity.Comment;
 import com.ftbb.mobile.news.gui.parts.CommentView;
 import com.ftbb.mobile.news.services.ServiceComment;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /** 
  * GUI builder created Form
  * 
@@ -43,7 +46,14 @@ public class ArticleViewForm extends com.codename1.ui.Form {
         gui_comments.setScrollableY(true);
         ArrayList<Comment> l = ServiceComment.getInstance().getAllComments(a.getArticle_id());
         gui_commentlab.setText("Comments - "  + l.size());
-        
+        Resources theme = UIManager.initFirstTheme("/newsui");
+        try {
+            Image img = Image.createImage("/res/like.png");
+            gui_art_like_but.setImage(img);
+        } catch (IOException ex) {
+            Logger.getLogger(ArticleViewForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         for(Comment c : l){
             System.out.println("ccc ");
             gui_comments.add(new CommentView(c).getView());
@@ -54,11 +64,13 @@ public class ArticleViewForm extends com.codename1.ui.Form {
         initGuiBuilderComponents(resourceObjectInstance);
     }
     
-////////////////////////////////////////////////////////////////////////////-- DON'T EDIT BELOW THIS LINE!!!
+//////////////////////////////////////////////////////////////////////////////////-- DON'T EDIT BELOW THIS LINE!!!
     protected com.codename1.components.ImageViewer gui_photo = new com.codename1.components.ImageViewer();
     protected com.codename1.components.SpanLabel gui_title = new com.codename1.components.SpanLabel();
     protected com.codename1.components.SpanLabel gui_texter = new com.codename1.components.SpanLabel();
+    protected com.codename1.ui.Container gui_Container = new com.codename1.ui.Container(new com.codename1.ui.layouts.BoxLayout(com.codename1.ui.layouts.BoxLayout.X_AXIS));
     protected com.codename1.ui.Label gui_commentlab = new com.codename1.ui.Label();
+    protected com.codename1.components.ImageViewer gui_art_like_but = new com.codename1.components.ImageViewer();
     protected com.codename1.ui.Container gui_comments = new com.codename1.ui.Container(new com.codename1.ui.layouts.BoxLayout(com.codename1.ui.layouts.BoxLayout.Y_AXIS));
 
 
@@ -79,18 +91,16 @@ public class ArticleViewForm extends com.codename1.ui.Form {
         gui_title.setUIID("title");
                 gui_title.setInlineStylesTheme(resourceObjectInstance);
         gui_title.setInlineAllStyles("font:16.0mm; bgColor:fce8d0; fgColor:ff7e79; alignment:left;");
-        gui_title.setInlineUnselectedStyles("font:16.0mm; fgColor:ff7e79; alignment:center;");
+        gui_title.setInlineUnselectedStyles("font:16.0mm; fgColor:ff7e79; alignment:left;");
         gui_title.setName("title");
-        gui_texter.setPreferredSizeStr("113.227516mm 88.88889mm");
+        gui_texter.setPreferredSizeStr("113.227516mm 77.77778mm");
         gui_texter.setText("texter");
         gui_texter.setUIID("texter");
                 gui_texter.setInlineStylesTheme(resourceObjectInstance);
         gui_texter.setName("texter");
-        gui_commentlab.setPreferredSizeStr("114.021164mm inherit");
-        gui_commentlab.setText("Comments - 0");
-        gui_commentlab.setUIID("com");
-                gui_commentlab.setInlineStylesTheme(resourceObjectInstance);
-        gui_commentlab.setName("commentlab");
+        gui_Container.setPreferredSizeStr("110.05291mm 15.343915mm");
+                gui_Container.setInlineStylesTheme(resourceObjectInstance);
+        gui_Container.setName("Container");
         gui_comments.setPreferredSizeStr("118.51852mm 42.32804mm");
         gui_comments.setScrollableY(false);
                 gui_comments.setInlineStylesTheme(resourceObjectInstance);
@@ -99,13 +109,22 @@ public class ArticleViewForm extends com.codename1.ui.Form {
         addComponent(gui_photo);
         addComponent(gui_title);
         addComponent(gui_texter);
-        addComponent(gui_commentlab);
+        addComponent(gui_Container);
+        gui_commentlab.setText("Comments - 0");
+        gui_commentlab.setUIID("com");
+                gui_commentlab.setInlineStylesTheme(resourceObjectInstance);
+        gui_commentlab.setName("commentlab");
+        gui_art_like_but.setUIID("art_like_but");
+                gui_art_like_but.setInlineStylesTheme(resourceObjectInstance);
+        gui_art_like_but.setName("art_like_but");
+        gui_Container.addComponent(gui_commentlab);
+        gui_Container.addComponent(gui_art_like_but);
         addComponent(gui_comments);
         ((com.codename1.ui.layouts.LayeredLayout)gui_photo.getParent().getLayout()).setInsets(gui_photo, "-0.26455116mm 0.0mm auto 0.5290985mm").setReferenceComponents(gui_photo, "-1 -1 -1 -1").setReferencePositions(gui_photo, "0.0 0.0 0.0 0.0");
         ((com.codename1.ui.layouts.LayeredLayout)gui_title.getParent().getLayout()).setInsets(gui_title, "-2.380951mm 2.3809524mm auto 2.3809495mm").setReferenceComponents(gui_title, "0 0 -1 -1").setReferencePositions(gui_title, "1.0 0.0 0.0 0.0");
         ((com.codename1.ui.layouts.LayeredLayout)gui_texter.getParent().getLayout()).setInsets(gui_texter, "0.0mm 0.0mm auto 0.0mm").setReferenceComponents(gui_texter, "1 1 -1 1 ").setReferencePositions(gui_texter, "1.0 0.0 0.0 0.0");
-        ((com.codename1.ui.layouts.LayeredLayout)gui_commentlab.getParent().getLayout()).setInsets(gui_commentlab, "0.0mm 0.0mm auto 0.0mm").setReferenceComponents(gui_commentlab, "2 1 -1 1 ").setReferencePositions(gui_commentlab, "1.0 0.0 0.0 0.0");
-        ((com.codename1.ui.layouts.LayeredLayout)gui_comments.getParent().getLayout()).setInsets(gui_comments, "0.0mm 0.0mm auto -0.52910054mm").setReferenceComponents(gui_comments, "3 0 -1 0 ").setReferencePositions(gui_comments, "1.0 0.0 0.0 0.0");
+        ((com.codename1.ui.layouts.LayeredLayout)gui_Container.getParent().getLayout()).setInsets(gui_Container, "0.0mm auto auto 0.0mm").setReferenceComponents(gui_Container, "2 -1 -1 1 ").setReferencePositions(gui_Container, "1.0 0.0 0.0 0.0");
+        ((com.codename1.ui.layouts.LayeredLayout)gui_comments.getParent().getLayout()).setInsets(gui_comments, "auto -5.9604645E-8mm auto 0.0mm").setReferenceComponents(gui_comments, "3 0 -1 0 ").setReferencePositions(gui_comments, "1.0 0.0 0.0 0.0");
     }// </editor-fold>
 
 //-- DON'T EDIT ABOVE THIS LINE!!!
