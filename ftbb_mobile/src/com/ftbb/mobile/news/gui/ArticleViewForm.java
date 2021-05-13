@@ -46,8 +46,8 @@ public class ArticleViewForm extends com.codename1.ui.Form {
         gui_comments.setScrollableY(true);
         ArrayList<Comment> l = ServiceComment.getInstance().getAllComments(a.getArticle_id());
         gui_commentlab.setText("Comments - "  + l.size());
+        gui_num_like.setText(a.getLikes()+"");
         for(Comment c : l){
-            System.out.println("ccc ");
             gui_comments.add(new CommentView(c).getView());
         }
     }
@@ -56,13 +56,14 @@ public class ArticleViewForm extends com.codename1.ui.Form {
         initGuiBuilderComponents(resourceObjectInstance);
     }
     
-////////////////////////////////////////////////////////////////////////////////////////////////////-- DON'T EDIT BELOW THIS LINE!!!
+////////////////////////////////////////////////////////////////////////////////////////////////////////-- DON'T EDIT BELOW THIS LINE!!!
     protected com.codename1.components.ImageViewer gui_photo = new com.codename1.components.ImageViewer();
     protected com.codename1.components.SpanLabel gui_title = new com.codename1.components.SpanLabel();
     protected com.codename1.components.SpanLabel gui_texter = new com.codename1.components.SpanLabel();
     protected com.codename1.ui.Container gui_Container = new com.codename1.ui.Container(new com.codename1.ui.layouts.BoxLayout(com.codename1.ui.layouts.BoxLayout.X_AXIS));
     protected com.codename1.ui.Label gui_commentlab = new com.codename1.ui.Label();
     protected com.codename1.ui.Button gui_art_like_but = new com.codename1.ui.Button();
+    protected com.codename1.ui.Label gui_num_like = new com.codename1.ui.Label();
     protected com.codename1.ui.Container gui_comments = new com.codename1.ui.Container(new com.codename1.ui.layouts.BoxLayout(com.codename1.ui.layouts.BoxLayout.Y_AXIS));
     protected com.codename1.ui.Container gui_Box_Layout_X = new com.codename1.ui.Container(new com.codename1.ui.layouts.BoxLayout(com.codename1.ui.layouts.BoxLayout.X_AXIS));
     protected com.codename1.ui.TextField gui_TextField = new com.codename1.ui.TextField();
@@ -92,14 +93,16 @@ public class ArticleViewForm extends com.codename1.ui.Form {
         gui_texter.setText("texter");
         gui_texter.setUIID("texter");
                 gui_texter.setInlineStylesTheme(resourceObjectInstance);
+        gui_texter.setInlineAllStyles("font:18.0mm;");
         gui_texter.setName("texter");
         gui_Container.setPreferredSizeStr("110.05291mm 15.343915mm");
                 gui_Container.setInlineStylesTheme(resourceObjectInstance);
+        gui_Container.setInlineAllStyles("bgColor:ff7e79;");
         gui_Container.setName("Container");
         gui_comments.setPreferredSizeStr("118.51852mm 41.00529mm");
         gui_comments.setScrollableY(false);
                 gui_comments.setInlineStylesTheme(resourceObjectInstance);
-        gui_comments.setInlineAllStyles("bgColor:fce8d0; alignment:center;");
+        gui_comments.setInlineAllStyles("font:6.0mm; bgColor:fce8d0; transparency:0; alignment:center;");
         gui_comments.setName("comments");
         gui_Box_Layout_X.setPreferredSizeStr("110.05291mm 10.8465605mm");
         gui_Box_Layout_X.setScrollableY(false);
@@ -112,13 +115,20 @@ public class ArticleViewForm extends com.codename1.ui.Form {
         gui_commentlab.setText("Comments - 0");
         gui_commentlab.setUIID("com");
                 gui_commentlab.setInlineStylesTheme(resourceObjectInstance);
+        gui_commentlab.setInlineAllStyles("font:4.0mm native:MainBold native:MainBold; fgColor:fb6800; alignment:left;");
         gui_commentlab.setName("commentlab");
         gui_art_like_but.setUIID("art_like_but");
                 gui_art_like_but.setInlineStylesTheme(resourceObjectInstance);
         gui_art_like_but.setName("art_like_but");
         gui_art_like_but.setIcon(resourceObjectInstance.getImage("like.png"));
+        gui_num_like.setText("num");
+        gui_num_like.setUIID("num_like");
+                gui_num_like.setInlineStylesTheme(resourceObjectInstance);
+        gui_num_like.setInlineAllStyles("fgColor:b4b4b4;");
+        gui_num_like.setName("num_like");
         gui_Container.addComponent(gui_commentlab);
         gui_Container.addComponent(gui_art_like_but);
+        gui_Container.addComponent(gui_num_like);
         addComponent(gui_comments);
         addComponent(gui_Box_Layout_X);
                 gui_TextField.setInlineStylesTheme(resourceObjectInstance);
@@ -126,6 +136,7 @@ public class ArticleViewForm extends com.codename1.ui.Form {
         gui_TextField.setColumns(13);
         gui_Button.setText("Comment");
                 gui_Button.setInlineStylesTheme(resourceObjectInstance);
+        gui_Button.setInlineAllStyles("fgColor:fdc607;");
         gui_Button.setName("Button");
         gui_Box_Layout_X.addComponent(gui_TextField);
         gui_Box_Layout_X.addComponent(gui_Button);

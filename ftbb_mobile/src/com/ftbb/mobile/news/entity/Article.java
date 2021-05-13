@@ -27,6 +27,8 @@ public class Article {
     private int category;
     private String admin_name;
     private String date;
+    private int likes;
+    private int comment_count;
     
     public Article(int id){
         this.article_id =id;
@@ -252,6 +254,34 @@ public class Article {
      */
     public void setDate(String date) {
         this.date = date;
+    }
+
+    /**
+     * @return the likes
+     */
+    public int getLikes() {
+        return likes;
+    }
+
+    /**
+     * @param likes the likes to set
+     */
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+
+    /**
+     * @return the comment_count
+     */
+    public int getComment_count() {
+        return comment_count;
+    }
+
+    /**
+     * @param comment_count the comment_count to set
+     */
+    public void setComment_count(int comment_count) {
+        this.comment_count = comment_count;
     }
 
   

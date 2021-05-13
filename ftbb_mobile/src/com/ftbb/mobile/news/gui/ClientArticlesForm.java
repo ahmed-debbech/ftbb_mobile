@@ -43,7 +43,7 @@ public class ClientArticlesForm extends Form{
         for(Article x : l){
             Image image = URLImage.createToStorage(placeholder, "icon"+i, x.getPhoto_url());
             files[i] = "icon"+i;
-            data.add(createListEntry(x.getArticle_id(), x.getTitle(), x.getDate().toString(), x.getText(), image));
+            data.add(createListEntry(x.getArticle_id(), x.getTitle(), x.getDate().toString(), x.getText(), image, x.getComment_count(), x.getLikes()));
             i++;
         }
         DefaultListModel<Map<String, Object>> model = new DefaultListModel<>(data);
@@ -57,18 +57,20 @@ public class ClientArticlesForm extends Form{
                 aa.setArticle_id(Integer.parseInt(value.get("id").toString()));
                 aa.setTitle(value.get("Line1").toString());
                 aa.setText(value.get("Line2").toString());
+                aa.setLikes(Integer.parseInt(value.get("num_like").toString()));
                 new ArticleViewForm(aa, files[list.getSelectedIndex()]).show();
             }
         });
         super.add(BorderLayout.CENTER, list);
     }
-    private Map<String, Object> createListEntry(int id, String title, String date, String text, Image icon) {
+    private Map<String, Object> createListEntry(int id, String title, String date, String text, Image icon, int com, int like) {
         Map<String, Object> entry = new HashMap<>();
         entry.put("Line1", title);
         entry.put("Line2", text);
         entry.put("Line3", Utilities.dateOnly(date));
-        entry.put("Line4", "0 - likes    0 - comments");
+        entry.put("Line4", like+" - likes    "+com+" - comments");
         entry.put("icon", icon);
+        entry.put("num_like", like);
         entry.put("id", id);
         return entry;
     }

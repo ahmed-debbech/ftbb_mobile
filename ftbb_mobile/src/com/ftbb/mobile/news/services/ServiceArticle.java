@@ -54,6 +54,14 @@ public class ServiceArticle {
                 t.setText(obj.get("text").toString());
                 t.setDate(obj.get("date").toString());
                 t.setPhoto_url(obj.get("photoUrl").toString());
+                if(obj.get("likes") != null){
+                    List<Map<String, Object>> kk = (List<Map<String, Object>> )obj.get("likes");
+                    t.setLikes(kk.size());
+                }
+                if(obj.get("comments") != null){
+                    List<Map<String, Object>> kk3 = (List<Map<String, Object>> )obj.get("comments");
+                    t.setComment_count(kk3.size());
+                }
                 //Ajouter la tâche extraite de la réponse Json à la liste
                 articles.add(t);
             }

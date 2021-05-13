@@ -43,7 +43,7 @@ public class CommentView {
         Label l4 = (Label)cc.getComponentAt(0);
         l4.setText(date + "");
         Label l3 = (Label)cc.getComponentAt(1);
-        l3.setText(likes + "");
+        l3.setText(likes + " - Likes");
     }
     public Container getView(){
         return cont;
