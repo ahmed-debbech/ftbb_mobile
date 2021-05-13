@@ -5,16 +5,22 @@
  */
 
  package com.ftbb.mobile.news.gui;  
+import com.codename1.components.ImageViewer;
 import com.codename1.components.MultiButton;
 import com.codename1.ui.Container;
 import com.codename1.ui.Display;
 import com.codename1.ui.EncodedImage;
+import com.codename1.ui.FontImage;
 import com.codename1.ui.Image;
 import com.codename1.ui.Label;
 import com.codename1.ui.URLImage;
 import com.codename1.ui.layouts.BoxLayout;
+import com.codename1.ui.plaf.UIManager;
+import com.codename1.ui.util.Resources;
+import com.codename1.ui.util.UIBuilder;
 import com.ftbb.mobile.news.entity.Article;
 import com.ftbb.mobile.news.entity.Comment;
+import com.ftbb.mobile.news.gui.parts.CommentView;
 import com.ftbb.mobile.news.services.ServiceComment;
 import java.util.ArrayList;
 /** 
@@ -25,6 +31,7 @@ import java.util.ArrayList;
 public class ArticleViewForm extends com.codename1.ui.Form {
     public ArticleViewForm(Article a, String photofile) {
         this(com.codename1.ui.util.Resources.getGlobalResources());
+        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new ClientArticlesForm().showBack());
         setScrollableY(true);
         gui_title.setText(a.getTitle());
         setTitle(a.getTitle());
@@ -36,13 +43,10 @@ public class ArticleViewForm extends com.codename1.ui.Form {
         gui_comments.setScrollableY(true);
         ArrayList<Comment> l = ServiceComment.getInstance().getAllComments(a.getArticle_id());
         gui_commentlab.setText("Comments - "  + l.size());
+        
         for(Comment c : l){
-            Container box = BoxLayout.encloseY(new Label("First"), 
-            new Label("Second"),
-            new Label("Third"), 
-            new Label("Fourth"), 
-            new Label("Fifth"));
-            gui_comments.add(box);
+            System.out.println("ccc ");
+            gui_comments.add(new CommentView(c).getView());
         }
     }
     
@@ -50,7 +54,7 @@ public class ArticleViewForm extends com.codename1.ui.Form {
         initGuiBuilderComponents(resourceObjectInstance);
     }
     
-//////////////////////////////////////////////////////////-- DON'T EDIT BELOW THIS LINE!!!
+////////////////////////////////////////////////////////////////////////////-- DON'T EDIT BELOW THIS LINE!!!
     protected com.codename1.components.ImageViewer gui_photo = new com.codename1.components.ImageViewer();
     protected com.codename1.components.SpanLabel gui_title = new com.codename1.components.SpanLabel();
     protected com.codename1.components.SpanLabel gui_texter = new com.codename1.components.SpanLabel();
@@ -70,11 +74,12 @@ public class ArticleViewForm extends com.codename1.ui.Form {
         gui_photo.setUIID("photo");
                 gui_photo.setInlineStylesTheme(resourceObjectInstance);
         gui_photo.setName("photo");
-        gui_title.setPreferredSizeStr("112.96297mm 15.608466mm");
+        gui_title.setPreferredSizeStr("112.96297mm 28.306879mm");
         gui_title.setText("title");
         gui_title.setUIID("title");
                 gui_title.setInlineStylesTheme(resourceObjectInstance);
-        gui_title.setInlineAllStyles("font:14.0mm; fgColor:ff7e79; alignment:left;");
+        gui_title.setInlineAllStyles("font:16.0mm; bgColor:fce8d0; fgColor:ff7e79; alignment:left;");
+        gui_title.setInlineUnselectedStyles("font:16.0mm; fgColor:ff7e79; alignment:center;");
         gui_title.setName("title");
         gui_texter.setPreferredSizeStr("113.227516mm 88.88889mm");
         gui_texter.setText("texter");
@@ -86,12 +91,11 @@ public class ArticleViewForm extends com.codename1.ui.Form {
         gui_commentlab.setUIID("com");
                 gui_commentlab.setInlineStylesTheme(resourceObjectInstance);
         gui_commentlab.setName("commentlab");
-        gui_comments.setPreferredSizeStr("118.51852mm 22.486773mm");
+        gui_comments.setPreferredSizeStr("118.51852mm 42.32804mm");
         gui_comments.setScrollableY(false);
                 gui_comments.setInlineStylesTheme(resourceObjectInstance);
-        gui_comments.setInlineAllStyles("alignment:center;");
+        gui_comments.setInlineAllStyles("bgColor:fce8d0; alignment:center;");
         gui_comments.setName("comments");
-
         addComponent(gui_photo);
         addComponent(gui_title);
         addComponent(gui_texter);
@@ -101,7 +105,7 @@ public class ArticleViewForm extends com.codename1.ui.Form {
         ((com.codename1.ui.layouts.LayeredLayout)gui_title.getParent().getLayout()).setInsets(gui_title, "-2.380951mm 2.3809524mm auto 2.3809495mm").setReferenceComponents(gui_title, "0 0 -1 -1").setReferencePositions(gui_title, "1.0 0.0 0.0 0.0");
         ((com.codename1.ui.layouts.LayeredLayout)gui_texter.getParent().getLayout()).setInsets(gui_texter, "0.0mm 0.0mm auto 0.0mm").setReferenceComponents(gui_texter, "1 1 -1 1 ").setReferencePositions(gui_texter, "1.0 0.0 0.0 0.0");
         ((com.codename1.ui.layouts.LayeredLayout)gui_commentlab.getParent().getLayout()).setInsets(gui_commentlab, "0.0mm 0.0mm auto 0.0mm").setReferenceComponents(gui_commentlab, "2 1 -1 1 ").setReferencePositions(gui_commentlab, "1.0 0.0 0.0 0.0");
-        ((com.codename1.ui.layouts.LayeredLayout)gui_comments.getParent().getLayout()).setInsets(gui_comments, "0.0mm 0.0mm 0.0mm 0.0mm").setReferenceComponents(gui_comments, "3 0 -1 0 ").setReferencePositions(gui_comments, "1.0 0.0 0.0 0.0");
+        ((com.codename1.ui.layouts.LayeredLayout)gui_comments.getParent().getLayout()).setInsets(gui_comments, "0.0mm 0.0mm auto -0.52910054mm").setReferenceComponents(gui_comments, "3 0 -1 0 ").setReferencePositions(gui_comments, "1.0 0.0 0.0 0.0");
     }// </editor-fold>
 
 //-- DON'T EDIT ABOVE THIS LINE!!!

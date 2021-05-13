@@ -12,16 +12,17 @@ import java.sql.Timestamp;
  * @author root
  */
 public class Comment {
-    
+
     private int id;
     private String content;
     private int client_id;
     private int article_id;
     private Timestamp date;
     private String client_name;
- 
-    public Comment(){
-        
+    private int likes;
+
+    public Comment() {
+
     }
 
     /**
@@ -106,5 +107,19 @@ public class Comment {
      */
     public void setDate(Timestamp date) {
         this.date = date;
+    }
+
+    /**
+     * @return the likes
+     */
+    public int getLikes() {
+        return likes;
+    }
+
+    /**
+     * @param likes the likes to set
+     */
+    public void setLikes(int likes) {
+        this.likes = likes;
     }
 }

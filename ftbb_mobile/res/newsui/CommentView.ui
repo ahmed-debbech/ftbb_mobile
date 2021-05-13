@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Container" name="CommentView" cloudDestinationProperty="CommentView" uiid="comment_cont" layout="BoxLayout" boxLayoutAxis="Y" >
+  <component type="Label" name="cmt_name" cloudDestinationProperty="name" uiid="name" text="name" >
+  </component>
+  <component type="Label" name="content" cloudDestinationProperty="content" uiid="content" text="content" >
+  </component>
+  <component type="Container" name="Container" cloudDestinationProperty="Container" layout="BoxLayout" boxLayoutAxis="X" >
+    <component type="Label" name="cmt_date" cloudDestinationProperty="cmt_date" uiid="cmt_date" text="date" >
+    </component>
+    <component type="Label" name="cmt_likes" cloudDestinationProperty="cmt_likes" uiid="cmt_likes" text="likes" >
+    </component>
+    <component type="ImageViewer" name="cmt_like_but" cloudDestinationProperty="cmt_like_but" uiid="cmt_like_but" >
+      <custom name="image" type="com.codename1.ui.Image" value="like.png" />
+    </component>
+  </component>
+</component>

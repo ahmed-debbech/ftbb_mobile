@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resource majorVersion="1" minorVersion="11" useXmlUI="false">
+    <ui name="CommentView" />
+    <image name="like-press.png"  />
+    <image name="like.png"  />
+    <theme name="th">
+        <val key="@includeNativeBool" value="true" />
+        <font key="cmt_date.font" type="ttf" face="0" style="0" size="0" name="native:ItalicThin" family="native:ItalicThin" sizeSettings="0" actualSize="12.0" />
+        <val key="cmt_likes.fgColor" value="ff6666" />
+        <font key="comment_cont.font" type="system" face="0" style="0" size="8" />
+        <font key="content.font" type="system" face="0" style="0" size="8" />
+        <font key="name.font" type="ttf" face="0" style="1" size="0" name="native:MainBold" family="native:MainBold" sizeSettings="0" actualSize="12.0" />
+    </theme>
+</resource>

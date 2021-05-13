@@ -54,7 +54,12 @@ public class ServiceComment {
                 dat = dat.replace('T', ' ');
                 System.out.println("dattt " + dat);
                 t.setDate(Timestamp.valueOf(dat));
-                //Ajouter la tâche extraite de la réponse Json à la liste
+                Map<String, Object> k = (Map<String, Object> )obj.get("client");
+                t.setClient_name(k.get("name").toString() + " " + k.get("surname").toString());
+                if(obj.get("likes") != null){
+                    List<Map<String, Object>> kk = (List<Map<String, Object>> )obj.get("likes");
+                    t.setLikes(kk.size());
+                }
                 comments.add(t);
             }
              
