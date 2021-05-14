@@ -17,16 +17,18 @@ public class Poll {
     private String creation_date;
     private String Status;
 
-   
-    public Poll() {
-        
-    }
-
-    public Poll(int poll_id, String Description) {
+    
+    public Poll(){}
+    
+    public Poll(int poll_id, String Description, String creation_date, String Status) {
         this.poll_id = poll_id;
         this.Description = Description;
+        this.creation_date = creation_date;
         this.Status = Status;
     }
+
+   
+   
 
     public String getStatus() {
         return Status;

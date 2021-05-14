@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Container" name="endedpoll" cloudDestinationProperty="endedpoll" uiid="endedpoll" layout="BoxLayout" boxLayoutAxis="Y" >
+  <component type="TextArea" name="TextArea" cloudBoundProperty="text" cloudDestinationProperty="TextArea" text="description" >
+  </component>
+  <component type="Container" name="Container" cloudDestinationProperty="Container" layout="BoxLayout" boxLayoutAxis="X" >
+    <component type="TextField" name="TextField" cloudBoundProperty="text" cloudDestinationProperty="TextField" text="opt1" >
+    </component>
+    <component type="Label" name="Label" cloudDestinationProperty="Label" text="%" >
+    </component>
+  </component>
+  <component type="Container" name="Container1" cloudDestinationProperty="Container1" layout="BoxLayout" boxLayoutAxis="X" >
+    <component type="TextField" name="TextField1" cloudBoundProperty="text" cloudDestinationProperty="TextField1" text="opt2" >
+    </component>
+    <component type="Label" name="Label1" cloudDestinationProperty="Label1" text="%" >
+    </component>
+  </component>
+</component>
