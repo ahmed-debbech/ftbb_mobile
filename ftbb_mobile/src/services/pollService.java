@@ -45,11 +45,12 @@ public class pollService {
             
         Map<String, Object> tasksListJson = j.parseJSON(new CharArrayReader(textJson.toCharArray()));
             ArrayList<Map<String,Object>> pollList = (ArrayList<Map<String,Object>>) tasksListJson.get("root");
+                        
             for(Map<String,Object> obj : pollList){
                 //Création des tâches et récupération de leurs données
                 Poll t = new Poll();
-          
-                t.setPoll_id((int) Float.parseFloat(obj.get("pollId").toString()));
+                double id = Double.parseDouble(obj.get("pollId").toString());
+                t.setPoll_id((int) id);
                 t.setDescription(obj.get("description").toString());
                 t.setStatus(obj.get("status").toString());
                 t.setCreation_date(obj.get("creationDate").toString());

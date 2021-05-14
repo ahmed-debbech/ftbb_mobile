@@ -4,12 +4,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/ftbb_mobile/ftbb_mobile/src/services/optionService.java</file>
+            <file>jar:file:/C:/xampp/htdocs/ftbb_mobile/ftbb_mobile/lib/CodenameOne_SRC.zip!/com/codename1/ui/Form.java</file>
             <file>file:/C:/xampp/htdocs/ftbb_mobile/ftbb_mobile/src/gui/endedPoll.java</file>
-            <file>file:/C:/xampp/htdocs/ftbb_mobile/ftbb_mobile/src/com/ftbb/mobile/MainApp.java</file>
+            <file>file:/C:/xampp/htdocs/ftbb_mobile/ftbb_mobile/src/Utils/Statics.java</file>
             <file>file:/C:/xampp/htdocs/ftbb_mobile/ftbb_mobile/src/gui/activePoll.java</file>
-            <file>file:/C:/xampp/htdocs/ftbb_mobile/ftbb_mobile/src/models/Poll.java</file>
             <file>file:/C:/xampp/htdocs/ftbb_mobile/ftbb_mobile/src/services/pollService.java</file>
-            <file>file:/C:/xampp/htdocs/ftbb_mobile/ftbb_mobile/src/Utils/Utilities.java</file>
         </group>
     </open-files>
 </project-private>
