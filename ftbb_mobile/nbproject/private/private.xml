@@ -9,7 +9,9 @@
             <file>file:/home/ahmed/ftbb_mobile/ftbb_mobile/src/com/ftbb/mobile/news/gui/ClientArticlesForm.java</file>
             <file>file:/home/ahmed/ftbb_mobile/ftbb_mobile/src/com/ftbb/mobile/MainApp.java</file>
             <file>file:/home/ahmed/ftbb_mobile/ftbb_mobile/src/com/ftbb/mobile/news/entity/Comment.java</file>
+            <file>file:/home/ahmed/ftbb_mobile/ftbb_mobile/src/com/ftbb/mobile/news/entity/Article.java</file>
             <file>file:/home/ahmed/ftbb_mobile/ftbb_mobile/src/com/ftbb/mobile/news/gui/parts/CommentView.java</file>
+            <file>file:/home/ahmed/ftbb_mobile/ftbb_mobile/src/com/ftbb/mobile/news/services/ServiceArticle.java</file>
         </group>
     </open-files>
 </project-private>

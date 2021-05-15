@@ -8,6 +8,7 @@
 import com.codename1.components.ImageViewer;
 import com.codename1.components.MultiButton;
 import com.codename1.ui.Container;
+import com.codename1.ui.Dialog;
 import com.codename1.ui.Display;
 import com.codename1.ui.EncodedImage;
 import com.codename1.ui.FontImage;
@@ -32,6 +33,9 @@ import java.util.logging.Logger;
  * @author root
  */ 
 public class ArticleViewForm extends com.codename1.ui.Form {
+    
+    public int CLIENT_ID = 122;
+    
     public ArticleViewForm(Article a, String photofile) {
         this(com.codename1.ui.util.Resources.getGlobalResources());
         getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new ClientArticlesForm().showBack());
@@ -50,6 +54,24 @@ public class ArticleViewForm extends com.codename1.ui.Form {
         for(Comment c : l){
             gui_comments.add(new CommentView(c).getView());
         }
+        gui_Button.addActionListener((e) -> {
+             if (gui_TextField.getText().length() ==0) {
+                Dialog.show("Alert", "Comment cannot be empty.",null, "OK");
+            }else {
+                
+                try {
+                    
+                Comment task = new Comment(gui_TextField.getText(), a.getArticle_id(),CLIENT_ID);
+                    if (ServiceComment.getInstance().addComment(task)) {
+                        Dialog.show("Success", "Houuuray! comment added.",null, "OK");
+                    }
+                    
+                } catch (NumberFormatException ee) {
+                    Dialog.show("Alert", "An error occured :(.",null, "OK");
+                }
+            }
+        });
+
     }
     
     public ArticleViewForm(com.codename1.ui.util.Resources resourceObjectInstance) {

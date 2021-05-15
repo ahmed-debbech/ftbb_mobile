@@ -83,5 +83,17 @@ public class ServiceComment {
         NetworkManager.getInstance().addToQueueAndWait(req);
         return comments;
     }
+    
+    public boolean addComment(Comment cmt){
+        String url = Statics.BASE_URL + "/comments/add/"+cmt.getArticle_id()+"/"+cmt.getClient_id()+"?content="+cmt.getContent();
+        req.setUrl(url);
+        req.setPost(false);
+        req.addResponseListener((evt) -> {
+            resultOK = req.getResponseCode()==200;
+        });
+        
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return resultOK;
+    }
 
 }

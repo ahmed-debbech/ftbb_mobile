@@ -24,7 +24,11 @@ public class Comment {
     public Comment() {
 
     }
-
+    public Comment(String content, int art, int cl){
+        this.client_id = cl;
+        this.article_id = art;
+        this.content= content;
+    }
     /**
      * @return the id
      */
