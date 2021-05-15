@@ -70,6 +70,7 @@ public class ServiceComment {
     }
     
     public ArrayList<Comment> getAllComments(int art){
+        comments = new ArrayList<>();
         String url = Statics.BASE_URL+"/comments/get/"+art;
         req.setUrl(url);
         req.setPost(false);

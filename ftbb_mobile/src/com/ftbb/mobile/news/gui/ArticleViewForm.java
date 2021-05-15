@@ -41,6 +41,7 @@ public class ArticleViewForm extends com.codename1.ui.Form {
         getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new ClientArticlesForm().showBack());
         setScrollableY(true);
         gui_title.setText(a.getTitle());
+        System.out.println(")))))))))))))))))))))))))))))))))))))");
         setTitle(a.getTitle());
         int mm = Display.getInstance().convertToPixels(3);
         EncodedImage placeholder = EncodedImage.createFromImage(Image.createImage(mm * 3, mm * 4, 0), false);
@@ -48,7 +49,9 @@ public class ArticleViewForm extends com.codename1.ui.Form {
         gui_photo.setImage(image);
         gui_texter.setText(a.getText());
         gui_comments.setScrollableY(true);
+        System.out.println("articcle " + a.getArticle_id());
         ArrayList<Comment> l = ServiceComment.getInstance().getAllComments(a.getArticle_id());
+        System.out.println("liest " + l.toString());
         gui_commentlab.setText("Comments - "  + l.size());
         gui_num_like.setText(a.getLikes()+"");
         for(Comment c : l){
