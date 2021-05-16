@@ -76,14 +76,14 @@ public class ServicesProduct {
             for (Map<String, Object> obj : productsList) {
                 
                 Product p = new Product();
-                p.setRef_product((int) Integer.parseInt(obj.get("ref_product").toString()));
+                p.setRef_product((int) Float.parseFloat(obj.get("refProduct").toString()));
                 p.setCategory(obj.get("category").toString());
                 p.setName(obj.get("name").toString());
                 p.setDetails(obj.get("details").toString());
                 p.setPhoto(obj.get("photo").toString());
-                p.setStock((int) Integer.parseInt(obj.get("stock").toString()));
-                p.setPrice((int) Integer.parseInt(obj.get("price").toString()));
-                p.setId_admin((int) Integer.parseInt(obj.get("id_admin").toString()));
+                p.setStock((int) Float.parseFloat(obj.get("stock").toString()));
+                p.setPrice((int) Float.parseFloat(obj.get("price").toString()));
+                p.setId_admin((int) Float.parseFloat(obj.get("idAdmin").toString()));
                 
                 
                 products.add(p);
@@ -103,7 +103,7 @@ public class ServicesProduct {
     //GET PRODUCTS
     public ArrayList<Product> getProducts(){
         
-         String url = Statics.BASE_URL+"/mobile/product/list_product_admin/";
+         String url = Statics.BASE_URL+"/mobile/product/list_product_client";
          ConnectionRequest request = new ConnectionRequest(url);
          request.setPost(false);
          request.addResponseListener(new ActionListener<NetworkEvent>() {

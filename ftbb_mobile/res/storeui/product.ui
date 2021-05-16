@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Container" name="product" cloudDestinationProperty="product" layout="BoxLayout" boxLayoutAxis="X" >
+  <component type="Label" name="photo" cloudDestinationProperty="photo" uiid="photo" text="Label" >
+  </component>
+  <component type="Label" name="name" cloudDestinationProperty="name" uiid="name" text="Label" >
+  </component>
+  <component type="Label" name="price" cloudDestinationProperty="price" uiid="price" text="Label" >
+  </component>
+  <component type="Button" name="add" cloudDestinationProperty="add" uiid="addcart" text="Add to Cart" >
+  </component>
+</component>

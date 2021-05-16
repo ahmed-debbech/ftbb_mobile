@@ -6,10 +6,19 @@
 package com.ftbb.mobile.gui;
 
 import com.codename1.components.SpanLabel;
+import com.codename1.ui.Component;
+import static com.codename1.ui.ComponentSelector.$;
+import com.codename1.ui.Container;
 import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
+import com.codename1.ui.Label;
 import com.codename1.ui.layouts.BoxLayout;
+import com.codename1.ui.plaf.UIManager;
+import com.codename1.ui.util.Resources;
+import com.codename1.ui.util.UIBuilder;
+import com.ftbb.mobile.entities.Product;
 import com.ftbb.mobile.services.ServicesProduct;
+import java.util.ArrayList;
 
 /**
  *
@@ -21,12 +30,21 @@ public class ListProductForm extends Form{
         setTitle("List Product");
         this.setLayout(BoxLayout.y());
         
-        SpanLabel productListSP = new SpanLabel();
-        productListSP.setText(ServicesProduct.getInstance().getProducts().toString());
+        ArrayList<Product> list = ServicesProduct.getInstance().getProducts();
         
-        this.add(productListSP);
         getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e-> new HomeForm().showBack());
         
+        Resources theme = UIManager.initFirstTheme("/storeui");
+        //UIBuilder.registerCustomComponent("ImageViewer",  com.codename1.components.ImageViewer.class);
+        UIBuilder ui = new UIBuilder();
+        Form grid_prod = (Form)ui.createContainer(theme, "store");
+        for(Product p : list){
+            Container prod = ui.createContainer(theme, "product");
+            Label name = (Label) prod.getComponentAt(1);
+            name.setText(p.getName());
+            grid_prod.add(prod);
+        }
+        this.add(grid_prod);
     }
     
     
