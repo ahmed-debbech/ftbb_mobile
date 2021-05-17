@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resource majorVersion="1" minorVersion="11" useXmlUI="false">
+    <theme name="HomeForAll">
+        <val key="@includeNativeBool" value="true" />
+    </theme>
+    <theme name="Theme">
+        <val key="@includeNativeBool" value="true" />
+        <val key="align" value="4" />
+        <val key="bgColor" value="f53636" />
+        <border key="border" type="empty" />
+        <val key="fgColor" value="ffffff" />
+        <font key="font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="5.0" />
+        <val key="margin" value="1.0,1.0,1.0,1.0" />
+        <val key="padUnit" value="0,2,0,0" />
+        <val key="padding" value="2.0,2.0,0.0,2.0" />
+        <val key="press#bgColor" value="650909" />
+        <border key="press#border" type="empty" />
+        <val key="press#fgColor" value="761010" />
+        <val key="transparency" value="255" />
+    </theme>
+</resource>
