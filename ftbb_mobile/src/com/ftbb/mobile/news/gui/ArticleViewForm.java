@@ -54,7 +54,7 @@ public class ArticleViewForm extends com.codename1.ui.Form {
     public ArticleViewForm(Article a, String photofile) {
         this(com.codename1.ui.util.Resources.getGlobalResources());
         instance = this;
-        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new ClientArticlesForm().showBack());
+        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new ClientArticlesForm().show());
         setScrollableY(true);
         gui_title.setText(a.getTitle());
         System.out.println(")))))))))))))))))))))))))))))))))))))");
@@ -75,10 +75,15 @@ public class ArticleViewForm extends com.codename1.ui.Form {
             System.out.println("a");
             if(gui_like_but.getText().equals("Like")){
                 System.out.println("b");
-                
+                int h = Integer.parseInt(gui_num_like.getText());
+                h++;
+                gui_num_like.setText(h+"");
                 gui_like_but.setText("Liked!");
             }else{
                 System.out.println("c");
+                int h = Integer.parseInt(gui_num_like.getText());
+                h--;
+                gui_num_like.setText(h+"");
                 gui_like_but.setText("Like");
             }
             ServiceLikes.getInstance().likeArticle(a.getArticle_id());
@@ -208,4 +213,6 @@ public class ArticleViewForm extends com.codename1.ui.Form {
     }// </editor-fold>
 
 //-- DON'T EDIT ABOVE THIS LINE!!!
+
+   
 }

@@ -59,6 +59,20 @@ public class ServiceLikes {
         
         NetworkManager.getInstance().addToQueueAndWait(req);
     }
+    public void likeComment(int cmt){
+        System.out.println(";;w");
+        String url = Statics.BASE_URL + "/likes/comment/"+cmt+"/"+CLIENT_ID;
+        req.setUrl(url);
+        req.setPost(false);
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+             @Override
+             public void actionPerformed(NetworkEvent evt) {
+              
+             }
+         });
+        
+        NetworkManager.getInstance().addToQueueAndWait(req);
+    }
     public boolean checkLike(int art){
         boolean test = true;
         String url = Statics.BASE_URL + "/likes/check/article/"+art+"/"+CLIENT_ID;
@@ -86,8 +100,31 @@ public class ServiceLikes {
         NetworkManager.getInstance().addToQueueAndWait(req);
         return test;
     }
-
-    public void unlikeArticle(int article_id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean checkCommentLike(int comment){
+        String url = Statics.BASE_URL + "/likes/check/comment/"+comment+"/"+CLIENT_ID;
+        req.setUrl(url);
+        req.setPost(false);
+        req.addResponseListener((evt) -> {
+            resultOK = req.getResponseCode()==200;
+            JSONParser j = new JSONParser();
+                Map<String, Object> list;
+                try {
+                    String vv = new String(req.getResponseData());
+                    list = j.parseJSON(new CharArrayReader(new String(req.getResponseData()).toCharArray()));
+                    ArrayList<Map<String,Object>> dd = (ArrayList<Map<String,Object>>) list.get("root");
+                    String val = dd.get(0).get("check").toString();
+                    System.out.println("value " + val);
+                if(val.equals("1")){
+                    resultOK = true;
+                }else{
+                        resultOK = false;
+                }
+                } catch (IOException ex) {
+                }
+        });
+        
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return resultOK;
     }
+    
 }

@@ -48,7 +48,7 @@ public class ServiceComment {
             for(Map<String,Object> obj : list){
                 //Création des tâches et récupération de leurs données
                 Comment t = new Comment();
-                t.setId((int) Float.parseFloat(obj.get("id").toString()));
+                t.setId((int) Double.parseDouble(obj.get("id").toString()));
                 t.setContent(obj.get("content").toString());
                 String dat = obj.get("date").toString().substring(0,19);
                 dat = dat.replace('T', ' ');

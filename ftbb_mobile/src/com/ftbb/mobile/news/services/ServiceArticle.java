@@ -73,6 +73,7 @@ public class ServiceArticle {
     }
     
     public ArrayList<Article> getAllArticles(){
+        articles = new ArrayList<>();
         String url = Statics.BASE_URL+"/articles/get/all";
         req.setUrl(url);
         req.setPost(false);

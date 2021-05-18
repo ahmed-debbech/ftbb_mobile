@@ -8,10 +8,7 @@
   <component type="Container" name="Container" cloudDestinationProperty="Container" layout="BoxLayout" boxLayoutAxis="X" >
     <component type="Label" name="cmt_date" cloudDestinationProperty="cmt_date" uiid="cmt_date" text="date" >
     </component>
-    <component type="Label" name="cmt_likes" cloudDestinationProperty="cmt_likes" uiid="cmt_likes" text="likes" >
-    </component>
-    <component type="ImageViewer" name="cmt_like_but" cloudDestinationProperty="cmt_like_but" uiid="cmt_like_but" >
-      <custom name="image" type="com.codename1.ui.Image" value="like.png" />
+    <component type="Button" name="cmt_likes" cloudDestinationProperty="cmt_likes" uiid="cmt_likes" text="Like" >
     </component>
   </component>
 </component>
