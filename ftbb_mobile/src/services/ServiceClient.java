@@ -5,16 +5,15 @@
  */
 package services;
 
+import utils.Statics;
 import com.codename1.io.ConnectionRequest;
 import com.codename1.io.*;
 import com.codename1.ui.Dialog;
-import com.codename1.ui.TextField;
 import com.codename1.ui.events.ActionListener;
 import entities.Client;
 import java.util.ArrayList;
 import java.util.Map;
 
-import utils.Statics;
 
 /**
  *

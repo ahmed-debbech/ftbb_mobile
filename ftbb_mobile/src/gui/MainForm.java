@@ -24,14 +24,19 @@ public class MainForm extends com.codename1.ui.Form {
         news.setUIID("main_news_but");
          Button store = new Button("Store");
         store.setUIID("main_news_but");
-        this.addAll(news, store);
+        Button polls = new Button("Polls");
+        polls.setUIID("main_news_but");
+        polls.addActionListener((e) -> {
+            new activePoll().show();
+        });
+        this.addAll(news, store, polls);
     }
     
     public MainForm(com.codename1.ui.util.Resources resourceObjectInstance) {
         initGuiBuilderComponents(resourceObjectInstance);
     }
 
-////////////////-- DON'T EDIT BELOW THIS LINE!!!
+//////////////////////-- DON'T EDIT BELOW THIS LINE!!!
 
 
 // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
