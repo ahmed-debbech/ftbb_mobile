@@ -50,7 +50,7 @@ public class optionService {
             List<Map<String, Object>> list = (List<Map<String, Object>>) eventsListJson.get("root");
             
             for (Map<String, Object> obj : list) {
-                System.out.println(obj);
+                
                 Options e = new Options();
               double id = Double.parseDouble(obj.get("optionId").toString());
                 e.setOption_id((int) id);

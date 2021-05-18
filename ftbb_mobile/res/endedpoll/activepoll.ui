@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <component type="Container" name="activepoll" cloudDestinationProperty="activepoll" uiid="activepoll_cont" layout="BoxLayout" boxLayoutAxis="Y" >
-  <component type="TextArea" name="polldesc" cloudBoundProperty="text" cloudDestinationProperty="TextArea" uiid="TextArea" scrollVisible="true" text="description" >
+  <component type="TextArea" name="polldesc" cloudBoundProperty="text" cloudDestinationProperty="TextArea" uiid="TextArea" scrollVisible="true" text="description" editable="false" >
   </component>
   <component type="Container" name="opt1container" cloudDestinationProperty="Container" uiid="opt1container" layout="BoxLayout" boxLayoutAxis="X" >
-    <component type="Button" name="opt1voteButton" cloudDestinationProperty="Button" uiid="opt1voteButton" text="&#x2714;" >
+    <component type="Button" name="opt1voteButton" cloudDestinationProperty="Button" uiid="Button" text="&#x2714;" >
     </component>
-    <component type="TextField" name="opt1desc" cloudBoundProperty="text" cloudDestinationProperty="TextField" uiid="TextField" text="opt1" >
+    <component type="TextField" name="opt1desc" cloudBoundProperty="text" cloudDestinationProperty="TextField" uiid="TextField" text="opt1" growByContent="false" editable="false" columns="10" >
     </component>
   </component>
   <component type="Container" name="opt2container" cloudDestinationProperty="Container1" uiid="opt2container" layout="BoxLayout" boxLayoutAxis="X" >
-    <component type="Button" name="opt2voteButton" cloudDestinationProperty="Button1" uiid="opt2voteButton" text="&#x2714;" >
+    <component type="Button" name="opt2voteButton" cloudDestinationProperty="Button1" uiid="Button" text="&#x2714;" >
     </component>
-    <component type="TextField" name="opt2desc" cloudBoundProperty="text" cloudDestinationProperty="TextField" text="opt2" >
+    <component type="TextField" name="opt2desc" cloudBoundProperty="text" cloudDestinationProperty="TextField" text="opt2" editable="false" >
     </component>
   </component>
 </component>

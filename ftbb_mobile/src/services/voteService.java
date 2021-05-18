@@ -15,6 +15,7 @@ import static com.codename1.io.rest.Rest.options;
 import com.codename1.ui.events.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import models.Options;
 import models.Vote;
@@ -29,7 +30,7 @@ public class voteService {
     private ConnectionRequest req;
     private ArrayList<Vote> votes=new ArrayList<>();
 
-    private voteService() {
+    public voteService() {
          req = new ConnectionRequest();
     }
 
@@ -40,42 +41,60 @@ public class voteService {
         return instance;
     }
     
-    public ArrayList<Vote> parseTasks(String textJson){
-        JSONParser j = new JSONParser();
+    
+    
+    public ArrayList<Vote> parseEvent(String jsonText) {
+     
         try {
+            votes = new ArrayList<>();
+            JSONParser j = new JSONParser();
+            Map<String, Object> eventsListJson = j.parseJSON(new CharArrayReader(jsonText.toCharArray()));
+            List<Map<String, Object>> list = (List<Map<String, Object>>) eventsListJson.get("root");
             
-        Map<String, Object> tasksListJson = j.parseJSON(new CharArrayReader(textJson.toCharArray()));
-            ArrayList<Map<String,Object>> voteList = (ArrayList<Map<String,Object>>) tasksListJson.get("root");
-            for(Map<String,Object> obj : voteList){
-                //Création des tâches et récupération de leurs données
-                Vote o = new Vote();
+            for (Map<String, Object> obj : list) {
+                Vote e = new Vote();
+              double id = Double.parseDouble(obj.get("voteId").toString());
+                e.setVote_id((int) id);
                 
-                o.setVote_id((int) Float.parseFloat(obj.get("voteId").toString()));
-                o.setOption_id((int) Float.parseFloat(obj.get("option/optionId").toString()));
-                o.setVote_nbr((int) Float.parseFloat(obj.get("voteNbr").toString())); 
-                //Ajouter la tâche extraite de la réponse Json à la liste
-                votes.add(o);
+                
+                e.setVote_nbr((int) Float.parseFloat(obj.get("voteNbr").toString())); 
+                votes.add(e);
+                
             }
-             
         } catch (IOException ex) {
-            System.out.println("An error occured");
+
         }
         return votes;
     }
     
     
-    public ArrayList<Vote> getAllVotes(){
-        String url = Statics.BASE_URL+"votelist";
+    
+    public ArrayList<Vote> getAllVotes(int id){
+        String url = Statics.BASE_URL+"votelist/"+id+"";
         req.setUrl(url);
         req.setPost(false);
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
             public void actionPerformed(NetworkEvent evt) {
-                votes = parseTasks(new String(req.getResponseData()));
+                votes = parseEvent(new String(req.getResponseData()));
                 req.removeResponseListener(this);
             }
         });
         NetworkManager.getInstance().addToQueueAndWait(req);
         return votes;
+    }
+    
+    public boolean addvote(int id){
+        String url = Statics.BASE_URL+"vote/"+id+"";
+        ConnectionRequest req = new ConnectionRequest(url);
+      
+        req.setPost(false);
+        req.addResponseListener((evt)->{
+            resultOK = req.getResponseCode()==200;
+            });
+        
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return resultOK;
+       
     }
 }

@@ -66,6 +66,7 @@ public class pollService {
     
     
     public ArrayList<Poll> getAllPolls(){
+      polls =new ArrayList<>();
         String url = Statics.BASE_URL+"polllist";
         req.setUrl(url);
         req.setPost(false);

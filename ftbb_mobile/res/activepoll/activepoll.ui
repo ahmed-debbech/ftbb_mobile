@@ -15,4 +15,6 @@
     <component type="TextField" name="TextField1" cloudBoundProperty="text" cloudDestinationProperty="TextField1" text="opt2" editable="false" >
     </component>
   </component>
+  <component type="Slider" name="Slider" cloudDestinationProperty="Slider" text="" >
+  </component>
 </component>
