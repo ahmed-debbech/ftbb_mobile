@@ -10,7 +10,9 @@ import com.codename1.io.ConnectionRequest;
 import com.codename1.io.JSONParser;
 import com.codename1.io.NetworkEvent;
 import com.codename1.io.NetworkManager;
+import com.codename1.ui.Dialog;
 import com.codename1.ui.events.ActionListener;
+import com.ftbb.mobile.Report.gui.ListFeedbacksForm;
 import com.ftbb.mobile.Report.models.Feedback;
 import com.ftbb.mobile.Report.utils.Statics;
 import java.io.IOException;
@@ -112,5 +114,74 @@ public class FeedbackService {
         
         NetworkManager.getInstance().addToQueueAndWait(request);
         return feedbacks;
+    }
+     
+      public void deletefed(int fed){
+        String url = Statics.BASE_URL+"/feedbackapi/supp/"+fed;
+         ConnectionRequest request = new ConnectionRequest(url);
+         request.setPost(false);
+         request.addResponseListener(new ActionListener<NetworkEvent>() {
+             @Override
+             public void actionPerformed(NetworkEvent evt) {
+                 
+                 
+             }
+         });
+         
+        
+        
+        NetworkManager.getInstance().addToQueueAndWait(request);
+    }
+
+   
+    public boolean modifyFed(int feedbackId) {
+        System.out.println("enter");
+         String url = Statics.BASE_URL+"/feedbackapi/modify/"+feedbackId;
+         ConnectionRequest request = new ConnectionRequest(url);
+         request.setPost(false);
+         final int kk = 0;
+         request.addResponseListener(new ActionListener<NetworkEvent>() {
+             @Override
+             public void actionPerformed(NetworkEvent evt) {
+                 JSONParser j = new JSONParser();
+                 Map<String, Object> feedbacksListJson;
+                 try {
+                     System.out.println("hereee" + feedbackId);
+                     feedbacksListJson = j.parseJSON(new CharArrayReader(new String(request.getResponseData()).toCharArray()));
+                     ArrayList<Map<String,Object>> feedbacksList = (ArrayList<Map<String,Object>>) feedbacksListJson.get("root");
+                String val = feedbacksList.get(0).get("v").toString();
+                 System.out.println("val fed : " + val);
+                 if(val.equals("valid")){
+                     ListFeedbacksForm.redirect(feedbackId);
+                 }else{
+                     Dialog.show("Success", "Could not edit beacause 24hours expired!",null, "OK");
+                 }
+
+                 } catch (IOException ex) {
+                 }
+                
+                 
+             }
+         });
+         
+        
+     NetworkManager.getInstance().addToQueueAndWait(request);
+     return false;
+    }
+    public void modifyNowFed(Feedback fe){
+        String url = Statics.BASE_URL+"/feedbackapi/modifynow/"+fe.getFeedbackId()+"?text="+fe.getText();
+         ConnectionRequest request = new ConnectionRequest(url);
+         request.setPost(false);
+         request.addResponseListener(new ActionListener<NetworkEvent>() {
+             @Override
+             public void actionPerformed(NetworkEvent evt) {
+                 
+                 
+             }
+         });
+         
+        
+        
+        NetworkManager.getInstance().addToQueueAndWait(request);
     }
 }

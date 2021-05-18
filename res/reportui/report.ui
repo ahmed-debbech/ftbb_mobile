@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <component type="Container" name="report" cloudDestinationProperty="report" layout="BoxLayout" boxLayoutAxis="Y" >
-  <component type="Container" name="Container" cloudDestinationProperty="Container" layout="BoxLayout" boxLayoutAxis="X" >
+  <component type="Container" name="Container" cloudDestinationProperty="Container" layout="BoxLayout" boxLayoutAxis="Y" >
     <component type="Label" name="rep_id" cloudDestinationProperty="rep_id" uiid="rep_id" text="id" >
     </component>
     <component type="Label" name="rep_date" cloudDestinationProperty="rep_date" uiid="rep_date" text="Label" >

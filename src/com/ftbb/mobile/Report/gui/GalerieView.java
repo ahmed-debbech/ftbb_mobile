@@ -13,6 +13,8 @@ import com.codename1.ui.Image;
 import com.codename1.ui.List;
 import com.codename1.ui.URLImage;
 import com.codename1.ui.layouts.BoxLayout;
+import com.codename1.ui.plaf.UIManager;
+import com.codename1.ui.util.Resources;
 import com.ftbb.mobile.Report.models.Galerie;
 import com.ftbb.mobile.Report.services.GalerieService;
 import java.util.ArrayList;
@@ -24,6 +26,7 @@ import java.util.ArrayList;
 public class GalerieView extends Form {
     
     public GalerieView() {
+      
         setLayout(BoxLayout.y());
         getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new HomeForAll().showBack());
         ArrayList <Galerie> list =GalerieService.getInstance().getGaleries();
@@ -41,6 +44,7 @@ public class GalerieView extends Form {
         gui_texter.setText(g.getDescription());
         add(gui_photo);
         add(gui_title);
+       
         add(gui_texter);
         }
     }

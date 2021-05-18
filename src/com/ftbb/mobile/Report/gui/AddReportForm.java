@@ -15,6 +15,7 @@ import com.codename1.ui.TextField;
 import com.codename1.ui.Toolbar;
 import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
+import com.codename1.ui.plaf.UIManager;
 import com.ftbb.mobile.Report.models.Report;
 import com.ftbb.mobile.Report.services.ReportService;
 import com.codename1.ui.util.Resources;
@@ -27,6 +28,7 @@ public class AddReportForm extends Form{
     
     //Form current;
     public AddReportForm(){
+        Resources theme=UIManager.initFirstTheme("/reportui");
        this.setLayout(BoxLayout.y());
        // Toolbar tb =new Toolbar(true);
        //current =this;
@@ -39,19 +41,20 @@ public class AddReportForm extends Form{
         
         
         TextField tfcommandid = new TextField("", "Insert command id");
-        tfcommandid.setUIID("TextFieldBlack");
+        tfcommandid.setUIID("TextFields");
         //addStringValue("tfcommandid",tfcommandid);
         
         TextField tfemail = new TextField("", "Insert email");
-        tfemail.setUIID("TextFieldBlack");
+        tfemail.setUIID("TextFields");
         //addStringValue("tfemail",tfemail);
         
         
         TextField tfdesc=new TextField("","Insert desc");
-        tfdesc.setUIID("TextFieldBlack");
+        tfdesc.setUIID("TextFields");
         //addStringValue("tfdesc",tfdesc);
         
         Button submitReportBtn = new Button("Submit");
+        submitReportBtn.setUIID("HomeForAllButtons");
        // addStringValue("",submitReportBtn);
         
         submitReportBtn.addActionListener((evt) -> {
@@ -89,15 +92,22 @@ public class AddReportForm extends Form{
         
     }
     public AddReportForm(int id){
+        Resources theme=UIManager.initFirstTheme("/reportui");
         this.setTitle("Modify Report");
         this.setLayout(BoxLayout.y());
         
         Label ied = new Label("ID: " + id);
         TextField tfcommandid = new TextField("", "Insert command id");
+        tfcommandid.setUIID("TextFields");
+        
         TextField tfemail = new TextField("", "Insert email");
+        tfemail.setUIID("TextFields");
+        
         TextField tfdesc=new TextField("","Insert desc");
+        tfdesc.setUIID("TextFields");
         
         Button submitReportBtn = new Button("Submit");
+        submitReportBtn.setUIID("HomeForAllButtons");
         submitReportBtn.addActionListener((evt) -> {
             
             if (tfcommandid.getText().length() ==0 || tfemail.getText().length()==0 || tfdesc.getText().length()==0 ) {

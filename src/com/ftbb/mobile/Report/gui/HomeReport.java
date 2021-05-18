@@ -9,6 +9,8 @@ import com.codename1.ui.Button;
 import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
 import com.codename1.ui.layouts.BoxLayout;
+import com.codename1.ui.plaf.UIManager;
+import com.codename1.ui.util.Resources;
 
 /**
  *
@@ -18,11 +20,14 @@ public class HomeReport extends Form {
     
     
     public HomeReport(){
+        Resources theme=UIManager.initFirstTheme("/reportui");
       this.setTitle("Home Report");
         this.setLayout(BoxLayout.y());
         
         Button addReportBtn = new Button("Add Report");
+        addReportBtn.setUIID("HomeForAllButtons");
         Button listReportsBtn = new Button("Reports List");
+        listReportsBtn.setUIID("HomeForAllButtons");
         
         addReportBtn.addActionListener(e -> new AddReportForm().show());
         listReportsBtn.addActionListener(x-> new ListReportsForm().show());
