@@ -23,6 +23,7 @@ import com.ftbb.mobile.news.entity.Article;
 import com.ftbb.mobile.news.entity.Comment;
 import com.ftbb.mobile.news.gui.parts.CommentView;
 import com.ftbb.mobile.news.services.ServiceComment;
+import com.ftbb.mobile.news.services.ServiceLikes;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -33,11 +34,26 @@ import java.util.logging.Logger;
  * @author root
  */ 
 public class ArticleViewForm extends com.codename1.ui.Form {
-    
     public int CLIENT_ID = 122;
+    private static ArticleViewForm instance;
+    
+    public void setColor(boolean b) {
+        System.out.println("calll");
+        if(b == true){
+                    gui_like_but.setText("Liked!");
+
+        }else{
+                    gui_like_but.setText("Like");
+        }
+    }
+    public static ArticleViewForm getInstance(){
+        return instance;
+    }
+    
     
     public ArticleViewForm(Article a, String photofile) {
         this(com.codename1.ui.util.Resources.getGlobalResources());
+        instance = this;
         getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new ClientArticlesForm().showBack());
         setScrollableY(true);
         gui_title.setText(a.getTitle());
@@ -54,6 +70,19 @@ public class ArticleViewForm extends com.codename1.ui.Form {
         System.out.println("liest " + l.toString());
         gui_commentlab.setText("Comments - "  + l.size());
         gui_num_like.setText(a.getLikes()+"");
+        ServiceLikes.getInstance().checkLike(a.getArticle_id());
+        gui_like_but.addActionListener((e) -> {
+            System.out.println("a");
+            if(gui_like_but.getText().equals("Like")){
+                System.out.println("b");
+                
+                gui_like_but.setText("Liked!");
+            }else{
+                System.out.println("c");
+                gui_like_but.setText("Like");
+            }
+            ServiceLikes.getInstance().likeArticle(a.getArticle_id());
+        });
         for(Comment c : l){
             gui_comments.add(new CommentView(c).getView());
         }
@@ -67,6 +96,11 @@ public class ArticleViewForm extends com.codename1.ui.Form {
                 Comment task = new Comment(gui_TextField.getText(), a.getArticle_id(),CLIENT_ID);
                     if (ServiceComment.getInstance().addComment(task)) {
                         Dialog.show("Success", "Houuuray! comment added.",null, "OK");
+                        ArrayList<Comment> dl = ServiceComment.getInstance().getAllComments(a.getArticle_id());
+                        gui_commentlab.setText("Comments - "  + dl.size());
+                        for(Comment c : dl){
+                            gui_comments.add(new CommentView(c).getView());
+                        }
                     }
                     
                 } catch (NumberFormatException ee) {
@@ -81,13 +115,13 @@ public class ArticleViewForm extends com.codename1.ui.Form {
         initGuiBuilderComponents(resourceObjectInstance);
     }
     
-////////////////////////////////////////////////////////////////////////////////////////////////////////-- DON'T EDIT BELOW THIS LINE!!!
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////-- DON'T EDIT BELOW THIS LINE!!!
     protected com.codename1.components.ImageViewer gui_photo = new com.codename1.components.ImageViewer();
     protected com.codename1.components.SpanLabel gui_title = new com.codename1.components.SpanLabel();
     protected com.codename1.components.SpanLabel gui_texter = new com.codename1.components.SpanLabel();
     protected com.codename1.ui.Container gui_Container = new com.codename1.ui.Container(new com.codename1.ui.layouts.BoxLayout(com.codename1.ui.layouts.BoxLayout.X_AXIS));
     protected com.codename1.ui.Label gui_commentlab = new com.codename1.ui.Label();
-    protected com.codename1.ui.Button gui_art_like_but = new com.codename1.ui.Button();
+    protected com.codename1.ui.Button gui_like_but = new com.codename1.ui.Button();
     protected com.codename1.ui.Label gui_num_like = new com.codename1.ui.Label();
     protected com.codename1.ui.Container gui_comments = new com.codename1.ui.Container(new com.codename1.ui.layouts.BoxLayout(com.codename1.ui.layouts.BoxLayout.Y_AXIS));
     protected com.codename1.ui.Container gui_Box_Layout_X = new com.codename1.ui.Container(new com.codename1.ui.layouts.BoxLayout(com.codename1.ui.layouts.BoxLayout.X_AXIS));
@@ -125,7 +159,7 @@ public class ArticleViewForm extends com.codename1.ui.Form {
         gui_Container.setInlineAllStyles("bgColor:ff7e79;");
         gui_Container.setName("Container");
         gui_comments.setPreferredSizeStr("118.51852mm 41.00529mm");
-        gui_comments.setScrollableY(false);
+        gui_comments.setScrollableY(true);
                 gui_comments.setInlineStylesTheme(resourceObjectInstance);
         gui_comments.setInlineAllStyles("font:6.0mm; bgColor:fce8d0; transparency:0; alignment:center;");
         gui_comments.setName("comments");
@@ -142,17 +176,17 @@ public class ArticleViewForm extends com.codename1.ui.Form {
                 gui_commentlab.setInlineStylesTheme(resourceObjectInstance);
         gui_commentlab.setInlineAllStyles("font:4.0mm native:MainBold native:MainBold; fgColor:fb6800; alignment:left;");
         gui_commentlab.setName("commentlab");
-        gui_art_like_but.setUIID("art_like_but");
-                gui_art_like_but.setInlineStylesTheme(resourceObjectInstance);
-        gui_art_like_but.setName("art_like_but");
-        gui_art_like_but.setIcon(resourceObjectInstance.getImage("like.png"));
+        gui_like_but.setText("Like");
+        gui_like_but.setUIID("like_but");
+                gui_like_but.setInlineStylesTheme(resourceObjectInstance);
+        gui_like_but.setName("like_but");
         gui_num_like.setText("num");
         gui_num_like.setUIID("num_like");
                 gui_num_like.setInlineStylesTheme(resourceObjectInstance);
         gui_num_like.setInlineAllStyles("fgColor:b4b4b4;");
         gui_num_like.setName("num_like");
         gui_Container.addComponent(gui_commentlab);
-        gui_Container.addComponent(gui_art_like_but);
+        gui_Container.addComponent(gui_like_but);
         gui_Container.addComponent(gui_num_like);
         addComponent(gui_comments);
         addComponent(gui_Box_Layout_X);
