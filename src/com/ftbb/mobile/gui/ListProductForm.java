@@ -25,6 +25,7 @@ import com.codename1.ui.util.UIBuilder;
 import com.ftbb.mobile.entities.Product;
 import com.ftbb.mobile.services.ServiceCart;
 import com.ftbb.mobile.services.ServicesProduct;
+import gui.MainForm;
 import java.util.ArrayList;
 
 /**
@@ -39,7 +40,7 @@ public class ListProductForm extends Form{
         
         ArrayList<Product> list = ServicesProduct.getInstance().getProducts();
         
-        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e-> new HomeForm().showBack());
+        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e-> new MainForm().showBack());
         
         Resources theme = UIManager.initFirstTheme("/storeui");
         UIBuilder.registerCustomComponent("ImageViewer",  com.codename1.components.ImageViewer.class);
