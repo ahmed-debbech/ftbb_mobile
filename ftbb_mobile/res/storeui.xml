@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <resource majorVersion="1" minorVersion="11" useXmlUI="false">
+    <ui name="cart" />
+    <ui name="command" />
+    <ui name="prod_cart" />
     <ui name="product" />
     <ui name="store" />
     <theme name="storetheme">
+        <val key="Label.fgColor" value="ff6600" />
+        <font key="Label.font" type="ttf" face="0" style="0" size="8" name="native:MainBold" family="native:MainBold" sizeSettings="0" actualSize="12.0" />
+        <val key="cart_pass.bgColor" value="999999" />
+        <font key="cmd.font" type="system" face="0" style="2" size="8" />
+        <val key="prod_addcart.bgColor" value="ff9933" />
+        <font key="prod_addcart.font" type="ttf" face="0" style="0" size="0" name="native:MainBlack" family="native:MainBlack" sizeSettings="1" actualSize="12.0" />
+        <val key="prod_addcart.marUnit" value="0,2,0,2" />
+        <val key="prod_addcart.margin" value="0.0,0.0,3.0,3.0" />
+        <val key="prod_cart_delete.bgColor" value="ff3333" />
+        <val key="prod_name.fgColor" value="ff3333" />
+        <font key="prod_name.font" type="system" face="0" style="0" size="8" />
+        <val key="prod_price.fgColor" value="ff9933" />
+        <val key="total.fgColor" value="ff6600" />
+        <font key="total.font" type="ttf" face="0" style="0" size="0" name="native:MainBold" family="native:MainBold" sizeSettings="1" actualSize="12.0" />
     </theme>
 </resource>

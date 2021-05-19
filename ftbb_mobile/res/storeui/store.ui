@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <component type="Form" name="store" cloudDestinationProperty="store" uiid="storeform" layout="BoxLayout" boxLayoutAxis="Y" >
+  <component type="Button" name="cart" cloudDestinationProperty="cart" uiid="cart" text="Your Cart" >
+  </component>
 </component>

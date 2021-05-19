@@ -76,11 +76,11 @@ public class ServicesProduct {
             for (Map<String, Object> obj : productsList) {
                 
                 Product p = new Product();
-                p.setRef_product((int) Float.parseFloat(obj.get("refProduct").toString()));
+                p.setRef_product((int) Double.parseDouble(obj.get("refProduct").toString()));
                 p.setCategory(obj.get("category").toString());
                 p.setName(obj.get("name").toString());
                 p.setDetails(obj.get("details").toString());
-                p.setPhoto(obj.get("photo").toString());
+                p.setPhoto("http://127.0.0.1/ftbb_web/ftbb_web/public/images/prod/"+obj.get("photo").toString());
                 p.setStock((int) Float.parseFloat(obj.get("stock").toString()));
                 p.setPrice((int) Float.parseFloat(obj.get("price").toString()));
                 p.setId_admin((int) Float.parseFloat(obj.get("idAdmin").toString()));
@@ -102,7 +102,7 @@ public class ServicesProduct {
 
     //GET PRODUCTS
     public ArrayList<Product> getProducts(){
-        
+         products = new ArrayList<>();
          String url = Statics.BASE_URL+"/mobile/product/list_product_client";
          ConnectionRequest request = new ConnectionRequest(url);
          request.setPost(false);
