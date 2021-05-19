@@ -2,6 +2,7 @@ package com.ftbb.mobile.news.gui;
 
 import com.codename1.components.MultiButton;
 import com.codename1.ui.Button;
+import com.codename1.ui.ComboBox;
 import com.codename1.ui.Container;
 import com.codename1.ui.Display;
 import com.codename1.ui.EncodedImage;
@@ -18,6 +19,7 @@ import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.TextModeLayout;
 import com.codename1.ui.list.DefaultListModel;
 import com.codename1.ui.list.MultiList;
+import com.codename1.ui.spinner.Picker;
 import com.ftbb.mobile.news.services.ServiceArticle;
 import com.ftbb.mobile.news.entity.Article;
 import com.ftbb.mobile.news.utils.Utilities;
@@ -32,10 +34,29 @@ public class ClientArticlesForm extends Form{
     public ClientArticlesForm(){
         current = this;
         setTitle("Articles");
-        setLayout(new BorderLayout());
+        setLayout(BoxLayout.y());
         setScrollableY(true);
-        ArrayList<Article> l = ServiceArticle.getInstance().getAllArticles();
-        
+        Picker p = new Picker();
+        p.setStrings("Select Sort...","Most commented", "Most Liked", "Newest");
+        p.setSelectedString("Select Sort...");
+        ArrayList<Article> l= null;
+        p.addActionListener((e) -> {
+            ArrayList<Article> tt;
+            if(p.getSelectedString().equals("Most Commented")){
+                tt = ServiceArticle.getInstance().getAllArticles(0);
+            }else{
+                if(p.getSelectedString().equals("Most Liked")){
+                    tt = ServiceArticle.getInstance().getAllArticles(1);
+                }else{
+                    if(p.getSelectedString().equals("Newest")){
+                        tt = ServiceArticle.getInstance().getAllArticles(2);
+                    }
+                }
+            }
+        });
+        if(p.getSelectedString().equals("Select Sort...")){
+            l = ServiceArticle.getInstance().getAllArticles();
+        }
         ArrayList<Map<String, Object>> data = new ArrayList<>();
         int mm = Display.getInstance().convertToPixels(3);
         EncodedImage placeholder = EncodedImage.createFromImage(Image.createImage(mm * 3, mm * 4, 0), false);
@@ -61,7 +82,8 @@ public class ClientArticlesForm extends Form{
                 new ArticleViewForm(aa, files[list.getSelectedIndex()]).show();
             }
         });
-        super.add(BorderLayout.CENTER, list);
+        this.add(p);
+        this.add( list);
     }
     private Map<String, Object> createListEntry(int id, String title, String date, String text, Image icon, int com, int like) {
         Map<String, Object> entry = new HashMap<>();

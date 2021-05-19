@@ -87,4 +87,34 @@ public class ServiceArticle {
         NetworkManager.getInstance().addToQueueAndWait(req);
         return articles;
     }
+
+    public ArrayList<Article> getAllArticles(int i) {
+            String url = "";
+        articles = new ArrayList<>();
+        switch(i){
+            case 0:
+                 url = Statics.BASE_URL+"/articles/sort/mostcomment";
+                break;
+            case 1:
+                 url = Statics.BASE_URL+"/articles/sort/sortliked";
+                break;
+            case 2:
+                 url = Statics.BASE_URL+"/articles/sort/newest/"+2;
+                break;
+            default:
+                 url = Statics.BASE_URL+"/articles/get/all";
+                break;
+        }
+        req.setUrl(url);
+        req.setPost(false);
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                articles = parseTasks(new String(req.getResponseData()));
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return articles;
+    }
 }

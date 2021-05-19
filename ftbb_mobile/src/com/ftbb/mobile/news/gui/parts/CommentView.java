@@ -48,6 +48,10 @@ public class CommentView {
         }else{
             del.setVisible(false);
         }
+        del.addActionListener((e) -> {
+            ServiceComment.getInstance().delete(c.getId());
+        });
+        
         Label l1 = (Label)cont.getComponentAt(1);
         l1.setText(content);
         Container cc = (Container)cont.getComponentAt(2);

@@ -99,4 +99,16 @@ public class ServiceComment {
         return resultOK;
     }
 
+    public void delete(int id) {
+        String url = Statics.BASE_URL + "/comments/delete/"+id;
+        req.setUrl(url);
+        req.setPost(false);
+        req.addResponseListener((evt) -> {
+            resultOK = req.getResponseCode()==200;
+        });
+        
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        
+    }
+
 }
