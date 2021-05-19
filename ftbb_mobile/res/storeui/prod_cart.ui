@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Container" name="prod_cart" cloudDestinationProperty="prod_cart" layout="BoxLayout" boxLayoutAxis="X" >
+  <component type="ImageViewer" name="prod_cart_img" cloudDestinationProperty="prod_cart_img" uiid="prod_cart_img" >
+  </component>
+  <component type="Label" name="prod_cart_name" cloudDestinationProperty="prod_cart_name" uiid="prod_cart_name" text="Label" >
+  </component>
+  <component type="Label" name="prod_cart_price" cloudDestinationProperty="prod_cart_price" uiid="prod_cart_price" text="Label" >
+  </component>
+  <component type="Picker" name="prod_cart_spinner" cloudDestinationProperty="prod_cart_spinner" uiid="prod_cart_spinner" text="Picker" >
+  </component>
+  <component type="Button" name="prod_cart_delete" cloudDestinationProperty="prod_cart_delete" uiid="prod_cart_delete" text="Remove" >
+  </component>
+</component>

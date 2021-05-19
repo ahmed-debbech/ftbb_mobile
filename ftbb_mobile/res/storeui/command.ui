@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Container" name="command" cloudDestinationProperty="cmd_id" layout="BoxLayout" boxLayoutAxis="Y" >
+  <component type="Container" name="Container" cloudDestinationProperty="Container" layout="BoxLayout" boxLayoutAxis="X" >
+    <component type="Label" name="cmd_id" cloudDestinationProperty="cmd_id" text="Label" >
+    </component>
+    <component type="Label" name="cmd_date" cloudDestinationProperty="cmd_date" uiid="cmd" text="Label1" >
+    </component>
+    <component type="Label" name="cmd_status" cloudDestinationProperty="cmd_status" uiid="cmd" text="Label" >
+    </component>
+    <component type="Label" name="cmd_tot" cloudDestinationProperty="cmd_tot" uiid="cmd" text="Label" >
+    </component>
+  </component>
+</component>
