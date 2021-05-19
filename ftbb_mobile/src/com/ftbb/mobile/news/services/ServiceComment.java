@@ -25,6 +25,7 @@ import java.util.Map;
  * @author root
  */
 public class ServiceComment {
+    public static int CLIENT_ID = 122;
     private static ServiceComment instance=null;
     public boolean resultOK;
     private ConnectionRequest req;
@@ -56,6 +57,7 @@ public class ServiceComment {
                 t.setDate(Timestamp.valueOf(dat));
                 Map<String, Object> k = (Map<String, Object> )obj.get("client");
                 t.setClient_name(k.get("name").toString() + " " + k.get("surname").toString());
+                t.setClient_id((int)Double.parseDouble(k.get("id").toString()));
                 if(obj.get("likes") != null){
                     List<Map<String, Object>> kk = (List<Map<String, Object>> )obj.get("likes");
                     t.setLikes(kk.size());

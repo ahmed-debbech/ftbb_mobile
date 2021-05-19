@@ -14,6 +14,7 @@ import com.codename1.ui.plaf.UIManager;
 import com.codename1.ui.util.Resources;
 import com.codename1.ui.util.UIBuilder;
 import com.ftbb.mobile.news.entity.Comment;
+import com.ftbb.mobile.news.services.ServiceComment;
 import com.ftbb.mobile.news.services.ServiceLikes;
 
 /**
@@ -38,8 +39,15 @@ public class CommentView {
         UIBuilder.registerCustomComponent("ImageViewer",  com.codename1.components.ImageViewer.class);
         UIBuilder ui = new UIBuilder();
         cont = ui.createContainer(theme, "CommentView");
-        Label l = (Label)cont.getComponentAt(0);
+        Container head = (Container)cont.getComponentAt(0);
+        Label l = (Label)head.getComponentAt(0);
         l.setText(name);
+        Button del = (Button)head.getComponentAt(1);
+        if(c.getClient_id()== ServiceComment.CLIENT_ID){
+            del.setVisible(true);
+        }else{
+            del.setVisible(false);
+        }
         Label l1 = (Label)cont.getComponentAt(1);
         l1.setText(content);
         Container cc = (Container)cont.getComponentAt(2);
