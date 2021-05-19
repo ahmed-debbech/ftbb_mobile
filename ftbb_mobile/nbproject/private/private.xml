@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/ftbb_mobile/src/services/voteService.java</file>
-            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/ftbb_mobile/Versions.properties</file>
             <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/ftbb_mobile/src/utils/Statics.java</file>
-            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/ftbb_mobile/src/gui/MainForm.java</file>
-            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/ftbb_mobile/src/gui/endedPoll.java</file>
-            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/ftbb_mobile/nbproject/private/private.xml</file>
-            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/ftbb_mobile/src/gui/SigninForm.java</file>
-            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/ftbb_mobile/src/com/ftbb/mobile/MainApp.java</file>
-            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/ftbb_mobile/src/services/ServiceClient.java</file>
-            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/ftbb_mobile/src/services/pollService.java</file>
-            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/ftbb_mobile/src/services/optionService.java</file>
-            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/ftbb_mobile/src/gui/activePoll.java</file>
         </group>
     </open-files>
 </project-private>
