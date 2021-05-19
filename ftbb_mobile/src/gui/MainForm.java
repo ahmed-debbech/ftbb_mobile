@@ -29,14 +29,24 @@ public class MainForm extends com.codename1.ui.Form {
         polls.addActionListener((e) -> {
             new activePoll().show();
         });
-        this.addAll(news, store, polls);
+        Button report = new Button("Submit a report");
+        report.setUIID("main_news_but");
+        report.addActionListener((e) -> {
+           
+        });
+        Button galery = new Button("See latest photos");
+        galery.setUIID("main_news_but");
+        galery.addActionListener((e) -> {
+           
+        });
+        this.addAll(news, store, polls, report, galery);
     }
     
     public MainForm(com.codename1.ui.util.Resources resourceObjectInstance) {
         initGuiBuilderComponents(resourceObjectInstance);
     }
 
-//////////////////////-- DON'T EDIT BELOW THIS LINE!!!
+////////////////////////-- DON'T EDIT BELOW THIS LINE!!!
 
 
 // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
