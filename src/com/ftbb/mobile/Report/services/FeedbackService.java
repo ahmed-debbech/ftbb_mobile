@@ -71,8 +71,8 @@ public class FeedbackService {
                 
                 Feedback f = new Feedback();
                     
-                f.setFeedbackId((int)Float.parseFloat(obj.get("feedbackId").toString()));
-                f.setClientId((int)Float.parseFloat(obj.get("clientId").toString()));
+                f.setFeedbackId((int)Double.parseDouble(obj.get("feedbackId").toString()));
+                f.setClientId((int)Double.parseDouble(obj.get("clientId").toString()));
                 f.setFeedbackDate(obj.get("feedbackDate").toString());
                 f.setEmail(obj.get("email").toString());
                 f.setTopic(obj.get("topic").toString());

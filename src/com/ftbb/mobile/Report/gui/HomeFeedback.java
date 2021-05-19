@@ -11,6 +11,7 @@ import com.codename1.ui.Form;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.plaf.UIManager;
 import com.codename1.ui.util.Resources;
+import gui.MainForm;
 
 /**
  *
@@ -33,7 +34,7 @@ public class HomeFeedback extends Form{
         listFeedbacksBtn.addActionListener(x-> new ListFeedbacksForm().show());
         
         this.addAll(addFeedbackBtn, listFeedbacksBtn);
-        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new HomeForAll().showBack());
+        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new MainForm().showBack());
 
 }
 }

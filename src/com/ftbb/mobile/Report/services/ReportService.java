@@ -83,7 +83,7 @@ public class ReportService {
                 Report r = new Report();
                     
                 r.setReport_id((int) Double.parseDouble(obj.get("reportId").toString()));
-                r.setClient_id((int)Float.parseFloat(obj.get("clientId").toString()));
+                r.setClient_id((int)Double.parseDouble(obj.get("clientId").toString()));
                 r.setCommand_id((int)Float.parseFloat(obj.get("commandId").toString()));
                 r.setReport_date(obj.get("reportDate").toString());
                 r.setEmail(obj.get("email").toString());

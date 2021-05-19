@@ -9,6 +9,7 @@ import com.codename1.ui.Button;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.plaf.UIManager;
 import com.ftbb.mobile.Report.gui.GalerieView;
+import com.ftbb.mobile.Report.gui.HomeFeedback;
 import com.ftbb.mobile.Report.gui.HomeReport;
 
 /**
@@ -41,14 +42,19 @@ public class MainForm extends com.codename1.ui.Form {
         galery.addActionListener((e) -> {
            new GalerieView().show();
         });
-        this.addAll(news, store, polls, report, galery);
+        Button feedback = new Button("Give us your opinion");
+        feedback.setUIID("main_news_but");
+        feedback.addActionListener((e) -> {
+           new HomeFeedback().show();
+        });
+        this.addAll(news, store, polls, report, galery, feedback);
     }
     
     public MainForm(com.codename1.ui.util.Resources resourceObjectInstance) {
         initGuiBuilderComponents(resourceObjectInstance);
     }
 
-////////////////////////////////////-- DON'T EDIT BELOW THIS LINE!!!
+////////////////////////////////////////////-- DON'T EDIT BELOW THIS LINE!!!
 
 
 // <editor-fold defaultstate="collapsed" desc="Generated Code">                          

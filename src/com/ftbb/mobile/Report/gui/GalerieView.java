@@ -26,6 +26,7 @@ import com.codename1.ui.util.ImageIO;
 import com.codename1.ui.util.Resources;
 import com.ftbb.mobile.Report.models.Galerie;
 import com.ftbb.mobile.Report.services.GalerieService;
+import gui.MainForm;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class GalerieView extends Form {
     public GalerieView() {
       
         setLayout(BoxLayout.y());
-        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new HomeForAll().showBack());
+        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new MainForm().showBack());
         ArrayList <Galerie> list =GalerieService.getInstance().getGaleries();
         int i=0;
         
