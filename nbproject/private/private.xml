@@ -4,18 +4,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/gui/SigninForm.java</file>
-            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/nbproject/private/private.xml</file>
-            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/Report/gui/GalerieView.java</file>
-            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/Report/services/FeedbackService.java</file>
-            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/Report/services/ReportService.java</file>
-            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/gui/MainForm.java</file>
-            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/Report/gui/HomeFeedback.java</file>
-            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/Report/services/GalerieService.java</file>
             <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/Report/gui/HomeReport.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/Report/services/FeedbackService.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/nbproject/private/private.xml</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/MainApp.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/gui/MainForm.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/Report/gui/GalerieView.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/gui/SigninForm.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/.gitignore</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/Report/services/ReportService.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/nbproject/private/private.properties</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/Report/gui/HomeFeedback.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/Versions.properties</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/Report/services/GalerieService.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/gui/endedPoll.java</file>
             <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/gui/activePoll.java</file>
             <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/gui/ProfileForm.java</file>
-            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/gui/endedPoll.java</file>
         </group>
     </open-files>
 </project-private>

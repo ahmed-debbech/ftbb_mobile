@@ -11,6 +11,7 @@ import com.codename1.ui.plaf.UIManager;
 import com.ftbb.mobile.Report.gui.GalerieView;
 import com.ftbb.mobile.Report.gui.HomeFeedback;
 import com.ftbb.mobile.Report.gui.HomeReport;
+import com.ftbb.mobile.gui.ListProductForm;
 
 /**
  * GUI builder created Form
@@ -27,6 +28,9 @@ public class MainForm extends com.codename1.ui.Form {
         news.setUIID("main_news_but");
          Button store = new Button("Store");
         store.setUIID("main_news_but");
+        store.addActionListener((e) -> {
+            new ListProductForm(null).show();
+        });
         Button polls = new Button("Polls");
         polls.setUIID("main_news_but");
         polls.addActionListener((e) -> {
@@ -54,7 +58,7 @@ public class MainForm extends com.codename1.ui.Form {
         initGuiBuilderComponents(resourceObjectInstance);
     }
 
-////////////////////////////////////////////-- DON'T EDIT BELOW THIS LINE!!!
+//////////////////////////////////////////////-- DON'T EDIT BELOW THIS LINE!!!
 
 
 // <editor-fold defaultstate="collapsed" desc="Generated Code">                          

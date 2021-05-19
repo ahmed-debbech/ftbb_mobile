@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Container" name="feedback" cloudDestinationProperty="feedback" layout="BoxLayout" boxLayoutAxis="Y" >
+  <component type="Container" name="Container" cloudDestinationProperty="Container" layout="BoxLayout" boxLayoutAxis="Y" >
+    <component type="Label" name="fed_id" cloudDestinationProperty="fed_id" uiid="rep_id" text="id" >
+    </component>
+    <component type="Label" name="fed_date" cloudDestinationProperty="fed_date" uiid="rep_date" text="Label" >
+    </component>
+    <component type="Label" name="fed_desc" cloudDestinationProperty="fed_des" uiid="rep_desc" scrollVisible="true" text="Label" >
+    </component>
+    <component type="Label" name="fed_topic" cloudDestinationProperty="fed_topic" uiid="rep_cmd" text="Label" >
+    </component>
+    <component type="Label" name="fed_type" cloudDestinationProperty="fed_type" uiid="rep_desc" text="Label" >
+    </component>
+  </component>
+  <component type="Container" name="Container1" cloudDestinationProperty="Container1" layout="BoxLayout" boxLayoutAxis="X" >
+    <component type="Button" name="Delete" cloudDestinationProperty="Delete" uiid="HomeForAllButtons" text="Delete" >
+    </component>
+    <component type="Button" name="Modify" cloudDestinationProperty="Modify" uiid="HomeForAllButtons" text="Modify" >
+    </component>
+  </component>
+</component>
