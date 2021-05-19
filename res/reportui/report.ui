@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Container" name="report" cloudDestinationProperty="report" layout="BoxLayout" boxLayoutAxis="Y" >
+  <component type="Container" name="Container" cloudDestinationProperty="Container" layout="BoxLayout" boxLayoutAxis="Y" >
+    <component type="Label" name="rep_id" cloudDestinationProperty="rep_id" uiid="rep_id" text="id" >
+    </component>
+    <component type="Label" name="rep_date" cloudDestinationProperty="rep_date" uiid="rep_date" text="Label" >
+    </component>
+    <component type="Label" name="rep_desc" cloudDestinationProperty="rep_desc" uiid="rep_desc" text="Label" >
+    </component>
+    <component type="Label" name="rep_cmd" cloudDestinationProperty="rep_cmd" uiid="rep_cmd" text="Label" >
+    </component>
+  </component>
+  <component type="Container" name="Container1" cloudDestinationProperty="Container1" layout="BoxLayout" boxLayoutAxis="X" >
+    <component type="Button" name="delete" cloudDestinationProperty="delete" uiid="delete" text="Delete" >
+    </component>
+    <component type="Button" name="rep_modify" cloudDestinationProperty="rep_modify" uiid="rep_modify" text="Modify" >
+    </component>
+  </component>
+</component>
