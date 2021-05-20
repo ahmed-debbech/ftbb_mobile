@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Container" name="CommentView" cloudDestinationProperty="CommentView" scrollVisible="true" layout="BoxLayout" boxLayoutAxis="Y" >
+  <component type="Label" name="name" cloudDestinationProperty="name" uiid="name" text="Name" >
+  </component>
+  <component type="Label" name="content" cloudDestinationProperty="content" uiid="content" text="Content" >
+  </component>
+</component>

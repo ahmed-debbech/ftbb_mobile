@@ -26,6 +26,9 @@ public class MainForm extends com.codename1.ui.Form {
         setLayout(BoxLayout.y());
         Button news = new Button("News");
         news.setUIID("main_news_but");
+        news.addActionListener((e) -> {
+            //new ClientArticlesForm().show();
+        });
          Button store = new Button("Store");
         store.setUIID("main_news_but");
         store.addActionListener((e) -> {
