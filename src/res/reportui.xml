@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resource majorVersion="1" minorVersion="11" useXmlUI="false">
+    <ui name="feedback" />
+    <ui name="report" />
+    <theme name="reporttheme">
+        <val key="HomeForAllButtons.align" value="4" />
+        <val key="HomeForAllButtons.bgColor" value="ff0000" />
+        <border key="HomeForAllButtons.border" type="empty" />
+        <val key="HomeForAllButtons.fgColor" value="fcfcfc" />
+        <font key="HomeForAllButtons.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="4.0" />
+        <val key="HomeForAllButtons.marUnit" value="2,2,2,2" />
+        <val key="HomeForAllButtons.margin" value="1.0,1.0,1.0,1.0" />
+        <val key="HomeForAllButtons.padUnit" value="0,2,0,0" />
+        <val key="HomeForAllButtons.padding" value="2.0,2.0,2.0,2.0" />
+        <val key="HomeForAllButtons.press#align" value="4" />
+        <val key="HomeForAllButtons.press#bgColor" value="810505" />
+        <border key="HomeForAllButtons.press#border" type="empty" />
+        <val key="HomeForAllButtons.press#derive" value="HomeForAllButtons" />
+        <val key="HomeForAllButtons.press#fgColor" value="fcfcfc" />
+        <font key="HomeForAllButtons.press#font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="4.0" />
+        <val key="HomeForAllButtons.press#marUnit" value="2,2,2,2" />
+        <val key="HomeForAllButtons.press#margin" value="1.0,1.0,1.0,1.0" />
+        <val key="HomeForAllButtons.press#padUnit" value="0,2,0,0" />
+        <val key="HomeForAllButtons.press#padding" value="2.0,2.0,2.0,2.0" />
+        <val key="HomeForAllButtons.press#transparency" value="255" />
+        <val key="HomeForAllButtons.sel#align" value="4" />
+        <val key="HomeForAllButtons.sel#bgColor" value="f0a3a3" />
+        <border key="HomeForAllButtons.sel#border" type="empty" />
+        <val key="HomeForAllButtons.sel#derive" value="HomeForAllButtons" />
+        <val key="HomeForAllButtons.sel#fgColor" value="fcfcfc" />
+        <font key="HomeForAllButtons.sel#font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="4.0" />
+        <val key="HomeForAllButtons.sel#marUnit" value="2,2,2,2" />
+        <val key="HomeForAllButtons.sel#margin" value="1.0,1.0,1.0,1.0" />
+        <val key="HomeForAllButtons.sel#padUnit" value="0,2,0,0" />
+        <val key="HomeForAllButtons.sel#padding" value="2.0,2.0,2.0,2.0" />
+        <val key="HomeForAllButtons.sel#transparency" value="255" />
+        <val key="HomeForAllButtons.transparency" value="255" />
+        <val key="TextFields.bgColor" value="cccccc" />
+        <val key="TextFields.fgColor" value="ff0000" />
+        <font key="TextFields.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="4.0" />
+        <val key="TextFields.marUnit" value="2,2,2,2" />
+        <val key="TextFields.margin" value="1.0,1.0,1.0,1.0" />
+        <val key="TextFields.padUnit" value="0,2,0,0" />
+        <val key="TextFields.padding" value="2.0,2.0,2.0,2.0" />
+        <val key="TextFields.transparency" value="255" />
+        <val key="Title.fgColor" value="ff0000" />
+        <font key="Title.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="9.0" />
+        <val key="Title.marUnit" value="2,2,2,2" />
+        <val key="Title.margin" value="1.0,1.0,1.0,1.0" />
+        <val key="Title.padUnit" value="0,2,0,0" />
+        <val key="Title.padding" value="2.0,2.0,2.0,2.0" />
+        <val key="delete.align" value="1" />
+        <val key="delete.bgColor" value="ff0000" />
+        <border key="delete.border" type="empty" />
+        <val key="delete.derive" value="HomeForAllButtons" />
+        <val key="delete.fgColor" value="ffffff" />
+        <font key="delete.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
+        <val key="delete.marUnit" value="2,2,2,2" />
+        <val key="delete.margin" value="1.0,1.0,1.0,1.0" />
+        <val key="delete.padUnit" value="0,2,0,0" />
+        <val key="delete.padding" value="2.0,2.0,0.5,2.0" />
+        <val key="rep_cmd.bgColor" value="ddb5b5" />
+        <border key="rep_cmd.border" type="empty" />
+        <font key="rep_cmd.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
+        <val key="rep_cmd.marUnit" value="2,2,2,2" />
+        <val key="rep_cmd.margin" value="1.0,1.0,1.0,1.0" />
+        <val key="rep_cmd.padUnit" value="0,2,0,0" />
+        <val key="rep_cmd.padding" value="2.0,2.0,2.0,2.0" />
+        <val key="rep_date.bgColor" value="ddb5b5" />
+        <border key="rep_date.border" type="empty" />
+        <font key="rep_date.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
+        <val key="rep_date.marUnit" value="2,2,2,2" />
+        <val key="rep_date.margin" value="1.0,1.0,1.0,1.0" />
+        <val key="rep_date.padUnit" value="0,2,0,0" />
+        <val key="rep_date.padding" value="2.0,2.0,2.0,2.0" />
+        <val key="rep_desc.bgColor" value="ddb5b5" />
+        <border key="rep_desc.border" type="empty" />
+        <font key="rep_desc.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
+        <val key="rep_desc.marUnit" value="2,2,2,2" />
+        <val key="rep_desc.margin" value="1.0,1.0,1.0,1.0" />
+        <val key="rep_desc.padUnit" value="0,2,0,0" />
+        <val key="rep_desc.padding" value="2.0,2.0,2.0,2.0" />
+        <val key="rep_id.bgColor" value="ddb5b5" />
+        <border key="rep_id.border" type="empty" />
+        <font key="rep_id.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
+        <val key="rep_id.marUnit" value="2,2,2,2" />
+        <val key="rep_id.margin" value="1.0,1.0,1.0,1.0" />
+        <val key="rep_id.padUnit" value="0,2,0,0" />
+        <val key="rep_id.padding" value="2.0,2.0,2.0,2.0" />
+        <val key="rep_modify.align" value="1" />
+        <val key="rep_modify.bgColor" value="ff0000" />
+        <border key="rep_modify.border" type="empty" />
+        <val key="rep_modify.derive" value="HomeForAllButtons" />
+        <val key="rep_modify.fgColor" value="ffffff" />
+        <font key="rep_modify.font" type="ttf" face="0" style="0" size="0" name="native:MainLight" family="native:MainLight" sizeSettings="3" actualSize="2.5" />
+        <val key="rep_modify.marUnit" value="2,2,2,2" />
+        <val key="rep_modify.margin" value="1.0,1.0,1.0,1.0" />
+        <val key="rep_modify.padUnit" value="0,2,0,0" />
+        <val key="rep_modify.padding" value="2.0,2.0,0.5,2.0" />
+    </theme>
+</resource>

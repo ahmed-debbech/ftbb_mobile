@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Container" name="CommentView" cloudDestinationProperty="CommentView" uiid="comment_cont" layout="BoxLayout" boxLayoutAxis="Y" >
+  <component type="Container" name="Container1" cloudDestinationProperty="Container1" layout="BoxLayout" boxLayoutAxis="X" >
+    <component type="Label" name="cmt_name" cloudDestinationProperty="name" uiid="name" text="name" >
+    </component>
+    <component type="Button" name="delete_cmt" cloudDestinationProperty="delete_cmt" uiid="delete_cmt" text="Del" >
+    </component>
+  </component>
+  <component type="Label" name="content" cloudDestinationProperty="content" uiid="content" text="content" >
+  </component>
+  <component type="Container" name="Container" cloudDestinationProperty="Container" layout="BoxLayout" boxLayoutAxis="X" >
+    <component type="Label" name="cmt_date" cloudDestinationProperty="cmt_date" uiid="cmt_date" text="date" >
+    </component>
+    <component type="Button" name="cmt_likes" cloudDestinationProperty="cmt_likes" uiid="cmt_likes" text="Like" >
+    </component>
+  </component>
+</component>

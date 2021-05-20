@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Container" name="endedpoll" cloudDestinationProperty="endedpoll" uiid="endedpoll" layout="BoxLayout" boxLayoutAxis="Y" >
+  <component type="TextArea" name="TextArea" cloudBoundProperty="text" cloudDestinationProperty="TextArea" text="description" editable="false" >
+  </component>
+  <component type="Container" name="Container" cloudDestinationProperty="Container" layout="BoxLayout" boxLayoutAxis="X" >
+    <component type="Slider" name="Slider1" cloudDestinationProperty="Slider1" text="" renderPercentageOnTop="true" >
+    </component>
+    <component type="TextField" name="TextField" cloudBoundProperty="text" cloudDestinationProperty="TextField" text="opt1" editable="false" >
+    </component>
+  </component>
+  <component type="Container" name="Container1" cloudDestinationProperty="Container1" layout="BoxLayout" boxLayoutAxis="X" >
+    <component type="Slider" name="Slider2" cloudDestinationProperty="Slider2" text="" progress="0" renderPercentageOnTop="true" >
+    </component>
+    <component type="TextField" name="TextField1" cloudBoundProperty="text" cloudDestinationProperty="TextField1" text="opt2" editable="false" >
+    </component>
+  </component>
+  <component type="Slider" name="Slider" cloudDestinationProperty="Slider" text="" infinite="false" progress="0" gap="5" verticalAlignment="2" >
+  </component>
+</component>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="cart" cloudDestinationProperty="cart" layout="BoxLayout" boxLayoutAxis="Y" >
+  <component type="Label" name="total" cloudDestinationProperty="total" uiid="total" text="Label" >
+  </component>
+  <component type="Button" name="cart_pass" cloudDestinationProperty="cart_pass" uiid="cart_pass" text="Passez Commande" >
+  </component>
+  <component type="Button" name="cmds" cloudDestinationProperty="cmds" uiid="cmds" text="See all your commands" >
+  </component>
+</component>
