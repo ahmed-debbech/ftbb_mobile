@@ -11,8 +11,10 @@ import com.codename1.io.*;
 import com.codename1.ui.Dialog;
 import com.codename1.ui.events.ActionListener;
 import entities.Client;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
+import utils.UserManager;
 
 
 /**
@@ -42,6 +44,27 @@ public class ServiceClient {
 //        req = new ConnectionRequest();
 //    }
     //signup?name=ali&surname=ali&number=22345678&birthday=2022-04-03&sex=Male&password=123456&email=aliali@gmail.com
+    
+    public static  void getClient(String email){
+        String url = Statics.BASE_URL+"/client/api/get/"+email;
+       ConnectionRequest req = new ConnectionRequest (url);
+        req.setPost(false);
+        req.addResponseListener((evt)->{
+            JSONParser j = new JSONParser();
+                Map<String, Object> list;
+                try {
+                    String vv = new String(req.getResponseData());
+                    list = j.parseJSON(new CharArrayReader(new String(req.getResponseData()).toCharArray()));
+                    ArrayList<Map<String,Object>> dd = (ArrayList<Map<String,Object>>) list.get("root");
+                    String val = String.valueOf((int) Double.parseDouble(dd.get(0).get("id").toString()));
+                    System.out.println("value " + val);
+                    UserManager.getInstance().getClient().setId(Integer.parseInt(val));
+                    UserManager.getInstance().getClient().setName(dd.get(1).get("name").toString());
+                } catch (IOException ex) {
+                }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+    }
     public boolean signup (Client t) {
         String url = Statics.BASE_URL+"/client/api/signup?name="+t.getName()+"&surname="+t.getSurname()
                 +"&number="+t.getNumber()+"&birthday="+t.getBirthday()+"&sex="+t.getSex()+"&password="+t.getPassword()+"&email="+t.getEmail();

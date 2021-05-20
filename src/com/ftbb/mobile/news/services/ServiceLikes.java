@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import utils.UserManager;
 
 /**
  *
@@ -27,7 +28,7 @@ import java.util.Map;
  */
 public class ServiceLikes {
     
-    public static int CLIENT_ID = 122;
+    public static int CLIENT_ID = UserManager.getInstance().getClient().getId();
     
     private static ServiceLikes instance=null;
     public boolean resultOK;

@@ -6,6 +6,7 @@
 package gui;
 
 import com.codename1.ui.Button;
+import com.codename1.ui.Label;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.plaf.UIManager;
 import com.ftbb.mobile.Report.gui.GalerieView;
@@ -13,6 +14,7 @@ import com.ftbb.mobile.Report.gui.HomeFeedback;
 import com.ftbb.mobile.Report.gui.HomeReport;
 import com.ftbb.mobile.gui.ListProductForm;
 import com.ftbb.mobile.news.gui.ClientArticlesForm;
+import utils.UserManager;
 
 /**
  * GUI builder created Form
@@ -25,6 +27,9 @@ public class MainForm extends com.codename1.ui.Form {
         this(com.codename1.ui.util.Resources.getGlobalResources());
         UIManager.initFirstTheme("/mainui");
         setLayout(BoxLayout.y());
+        System.out.println("iddd " + UserManager.getInstance().getClient().getName());
+        Label wel = new Label("Welcome back "+UserManager.getInstance().getClient().getName()+"!");
+        wel.setUIID("welcomming");
         Button news = new Button("News");
         news.setUIID("main_news_but");
         news.addActionListener((e) -> {
@@ -55,7 +60,7 @@ public class MainForm extends com.codename1.ui.Form {
         feedback.addActionListener((e) -> {
            new HomeFeedback().show();
         });
-        this.addAll(news, store, polls, report, galery, feedback);
+        this.addAll(wel,news, store, polls, report, galery, feedback);
     }
     
     public MainForm(com.codename1.ui.util.Resources resourceObjectInstance) {

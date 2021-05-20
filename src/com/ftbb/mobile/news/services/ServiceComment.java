@@ -18,13 +18,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import utils.UserManager;
 
 /**
  *
  * @author root
  */
 public class ServiceComment {
-    public static int CLIENT_ID = 122;
+    public static int CLIENT_ID = UserManager.getInstance().getClient().getId();
     private static ServiceComment instance=null;
     public boolean resultOK;
     private ConnectionRequest req;

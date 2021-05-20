@@ -9,9 +9,11 @@ import com.codename1.ui.Button;
 import com.codename1.ui.Dialog;
 import com.codename1.ui.Form;
 import com.codename1.ui.Image;
+import com.codename1.ui.Label;
 import com.codename1.ui.TextArea;
 import com.codename1.ui.TextField;
 import com.codename1.ui.layouts.BoxLayout;
+import com.codename1.ui.plaf.UIManager;
 import entities.Client;
 import services.ServiceClient;
 
@@ -24,13 +26,19 @@ public class SigninForm extends Form{
         
          this.setTitle("Sign in");
         this.setLayout(BoxLayout.y());
-       
+        UIManager.initFirstTheme("/mainui");
+        Label email = new Label("Enter your email");
         TextField tfemail = new TextField("", "inserer email",255, TextArea.EMAILADDR);
+        tfemail.setUIID("logt");
+        Label pass = new Label("Enter your password");
         TextField tfpass = new TextField("","saisir votre password",20, TextField.PASSWORD);
+        tfpass.setUIID("logt");
         Button signinBtn = new Button("Sign in");
+        signinBtn.setUIID("logb");
         Button signupBtn = new Button("Sign up");
+        signupBtn.setUIID("logb");
         signupBtn.addActionListener(l->new SignupForm().show());
-        this.addAll(tfemail,tfpass,signinBtn,signupBtn);
+        this.addAll(email,tfemail,pass,tfpass,signinBtn,signupBtn);
         signinBtn.addActionListener((l) -> {
           
             if (tfemail.getText().length() == 0 || tfpass.getText().length() == 0) {
@@ -38,8 +46,9 @@ public class SigninForm extends Form{
             } else {
                 try {
                     Client cl = new Client();
-                   
+                    
                     cl.setEmail(tfemail.getText());
+                    ServiceClient.getClient(String.valueOf(tfemail.getText()));
                     cl.setPassword(tfpass.getText());
                     if (new ServiceClient ().signin(cl)){
                      new MainForm().show();

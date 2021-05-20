@@ -18,6 +18,7 @@ import com.ftbb.mobile.utils.Statics;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
+import utils.UserManager;
 
 
 /**
@@ -26,7 +27,7 @@ import java.util.Map;
  */
 public class ServiceCart {
     
-    public static String CLIENT_ID="2";
+    public static String CLIENT_ID=String.valueOf(UserManager.getInstance().getClient().getId());
     //var
     boolean resultOK;
     ConnectionRequest req;

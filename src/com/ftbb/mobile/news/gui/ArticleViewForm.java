@@ -26,13 +26,14 @@ import com.ftbb.mobile.news.services.ServiceComment;
 import com.ftbb.mobile.news.services.ServiceLikes;
 import java.io.IOException;
 import java.util.ArrayList;
+import utils.UserManager;
 /** 
  * GUI builder created Form
  * 
  * @author root
  */ 
 public class ArticleViewForm extends com.codename1.ui.Form {
-    public int CLIENT_ID = 122;
+    public int CLIENT_ID = UserManager.getInstance().getClient().getId();
     private static ArticleViewForm instance;
     
     public void setColor(boolean b) {
