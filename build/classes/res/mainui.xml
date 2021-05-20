@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resource majorVersion="1" minorVersion="11" useXmlUI="false">
+    <theme name="main_theme">
+        <val key="main_news_but.bgColor" value="ff3300" />
+        <font key="main_news_but.font" type="ttf" face="0" style="0" size="0" name="native:MainBold" family="native:MainBold" sizeSettings="1" actualSize="12.0" />
+    </theme>
+</resource>
