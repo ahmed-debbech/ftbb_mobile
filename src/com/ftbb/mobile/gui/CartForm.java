@@ -33,7 +33,7 @@ public class CartForm extends Form{
     
     public CartForm( ){
         setTitle("Your Cart");
-        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e-> new HomeForm().showBack());
+        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e-> new ListProductForm(null).showBack());
         
         Resources theme = UIManager.initFirstTheme("/storeui");
         UIBuilder.registerCustomComponent("ImageViewer",  com.codename1.components.ImageViewer.class);
@@ -49,7 +49,7 @@ public class CartForm extends Form{
             Container prod = ui.createContainer(theme, "prod_cart");
             
             ImageViewer iv = (ImageViewer) prod.getComponentAt(0);
-            Image image = URLImage.createToStorage(placeholder, "cicon"+i, p.getPhoto());
+            Image image = URLImage.createToStorage(placeholder, "nnicon"+i, p.getPhoto());
             iv.setImage(image);
             Label name = (Label) prod.getComponentAt(1);
             name.setText(p.getName());
