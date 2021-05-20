@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" layout="LayeredLayout" layeredLayoutPreferredWidthMM="0.0" layeredLayoutPreferredHeightMM="0.0"  autolayout="true" title="GuiCompetitionForm" rtl="false" scrollableX="false" scrollableY="false" name="GuiCompetitionForm">
+  <component type="Label" text="List Competition" preferredSize="43.121693mm 9.259259mm" name="Label">
+    <layoutConstraint insets="4.2328043mm auto auto 3.9106147%" referenceComponents="-1 -1 -1 -1" referencePositions="0.0 0.0 0.0 0.0" />
+  </component>
+  <component type="Table" preferredSize="42.32804mm 28.83598mm" name="Table">
+  <custom name="data" type="java.lang.String" array="true" dimensions="2">
+    <arr>
+        <str>1</str>
+        <str>2</str>
+    </arr>
+    <arr>
+        <str>3</str>
+        <str>4</str>
+    </arr>
+    <arr>
+        <str>Val2</str>
+        <str>Val2</str>
+    </arr>
+  </custom>
+    <layoutConstraint insets="0.0mm 1.8518524mm 77.14885% 0.0mm" referenceComponents="0 0 -1 0 " referencePositions="1.0 0.0 0.0 0.0" />
+  </component>
+</component>
