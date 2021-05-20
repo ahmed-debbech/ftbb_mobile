@@ -68,7 +68,8 @@ public class MainForm extends com.codename1.ui.Form {
         Button dec = new Button("Disconnet");
         dec.setUIID("dec");
         dec.addActionListener((e) -> {
-           new HomeFeedback().show();
+            UserManager.getInstance().removeClient();
+           new SigninForm().show();
         });
         
         this.addAll(wel,news, store, polls, report, galery, comp, feedback, dec);

@@ -28,4 +28,8 @@ public class UserManager {
     public Client getClient(){
         return client;
     }
+    public void removeClient(){
+        instance = null;
+        client = null;
+    }
 }
