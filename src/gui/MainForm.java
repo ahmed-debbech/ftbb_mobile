@@ -30,7 +30,7 @@ public class MainForm extends com.codename1.ui.Form {
         System.out.println("iddd " + UserManager.getInstance().getClient().getName());
         Label wel = new Label("Welcome back "+UserManager.getInstance().getClient().getName()+"!");
         wel.setUIID("welcomming");
-        Button news = new Button("News");
+        Button news = new Button("Latest news!");
         news.setUIID("main_news_but");
         news.addActionListener((e) -> {
             new ClientArticlesForm().show();
@@ -40,7 +40,7 @@ public class MainForm extends com.codename1.ui.Form {
         store.addActionListener((e) -> {
             new ListProductForm(null).show();
         });
-        Button polls = new Button("Polls");
+        Button polls = new Button("Vote on polls");
         polls.setUIID("main_news_but");
         polls.addActionListener((e) -> {
             new activePoll().show();
@@ -50,7 +50,7 @@ public class MainForm extends com.codename1.ui.Form {
         report.addActionListener((e) -> {
            new HomeReport().show();
         });
-        Button galery = new Button("See latest photos");
+        Button galery = new Button("See latest galeries");
         galery.setUIID("main_news_but");
         galery.addActionListener((e) -> {
            new GalerieView().show();
@@ -60,7 +60,12 @@ public class MainForm extends com.codename1.ui.Form {
         feedback.addActionListener((e) -> {
            new HomeFeedback().show();
         });
-        this.addAll(wel,news, store, polls, report, galery, feedback);
+        Button dec = new Button("Disconnet");
+        dec.setUIID("dec");
+        dec.addActionListener((e) -> {
+           new HomeFeedback().show();
+        });
+        this.addAll(wel,news, store, polls, report, galery, feedback, dec);
     }
     
     public MainForm(com.codename1.ui.util.Resources resourceObjectInstance) {

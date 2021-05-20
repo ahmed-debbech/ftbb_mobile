@@ -2,6 +2,10 @@
 
 <resource majorVersion="1" minorVersion="11" useXmlUI="false">
     <theme name="main_theme">
+        <val key="dec.align" value="4" />
+        <val key="dec.bgColor" value="cccccc" />
+        <val key="dec.fgColor" value="ffffff" />
+        <font key="dec.font" type="ttf" face="0" style="0" size="0" name="native:MainBold" family="native:MainBold" sizeSettings="1" actualSize="12.0" />
         <val key="logb.align" value="4" />
         <val key="logb.bgColor" value="ff3333" />
         <val key="logb.fgColor" value="ffffff" />
@@ -13,7 +17,7 @@
         <val key="main_news_but.fgColor" value="ffffff" />
         <font key="main_news_but.font" type="ttf" face="0" style="1" size="0" name="native:ItalicLight" family="native:ItalicLight" sizeSettings="1" actualSize="12.0" />
         <val key="main_news_but.padUnit" value="0,2,0,0" />
-        <val key="main_news_but.padding" value="2.0,2.0,2.0,2.0" />
+        <val key="main_news_but.padding" value="2.0,10.5,2.0,2.0" />
         <val key="welcomming.padUnit" value="0,0,2,0" />
         <val key="welcomming.padding" value="0.0,7.5,0.0,0.0" />
     </theme>
