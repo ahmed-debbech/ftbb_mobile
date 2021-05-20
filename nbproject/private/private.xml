@@ -5,8 +5,25 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/MainApp.java</file>
-            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/gui/MainForm.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/news/entity/Comment.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/news/services/ServiceComment.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/services/ServiceCart.java</file>
             <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/nbproject/private/private.xml</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/build.xml</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/gui/SigninForm.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/news/gui/parts/CommentView.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/news/services/ServiceLikes.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/news/gui/ArticleForm.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/entities/Client.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/news/services/ServiceArticle.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/gui/CartForm.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/news/gui/ArticleViewForm.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/gui/MainForm.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/utils/UserManager.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/services/ServiceClient.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/services/ServicesProduct.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/gui/CommandForm.java</file>
+            <file>file:/C:/Users/DELL/Desktop/mobile/ftbb_mobile/src/com/ftbb/mobile/news/gui/ClientArticlesForm.java</file>
         </group>
     </open-files>
 </project-private>

@@ -151,6 +151,6 @@ public class FavUI  extends Form {
 //this.add(initLabel);
 this.add(ic);
 //this.add(table);
-getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new HomeForm().showBack());
+getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new HomeFormComp().showBack());
 }
 }

@@ -68,7 +68,7 @@ public class WeekService {
     //GET weeks
     public ArrayList<Week> getWeeks(){
         weeks.clear();
-         String url = Statics.BASE_URL+"showWeeks";
+         String url = Statics.BASE_URL+"/api/showWeeks";
          ConnectionRequest request = new ConnectionRequest(url);
          request.setPost(false);
          request.addResponseListener(new ActionListener<NetworkEvent>() {

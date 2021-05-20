@@ -48,7 +48,7 @@ public class AddCompetitionForm extends Form {
         });
          
         this.addAll(tfname,  submitTaskBtn);
-       getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new HomeForm().showBack());
+       getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new HomeFormComp().showBack());
         
         
     }

@@ -11,7 +11,6 @@ import com.codename1.io.JSONParser;
 import com.codename1.io.NetworkManager;
 import models.Competition;
 import com.codename1.io.Log;
-import org.json.simple.JSONObject; 
 import com.codename1.io.NetworkEvent;
 import com.codename1.ui.events.ActionListener;
 import java.io.ByteArrayInputStream;
@@ -56,7 +55,7 @@ public class CompetitionService {
     
     //ADD Competition 
     public boolean addCompetitionAction(Competition t){
-         String url = Statics.BASE_URL + "addCompetition/"+ t.getName() + "/" + t.getCalendar();
+         String url = Statics.BASE_URL + "/api/addCompetition/"+ t.getName() + "/" + t.getCalendar();
         req.setUrl(url);
         req.setPost(false);
         req.addResponseListener((evt) -> {
@@ -100,7 +99,7 @@ public class CompetitionService {
     //GET Competition
     public ArrayList<Competition> getCompetitions(){
         competitions.clear();
-         String url = Statics.BASE_URL+"showCompetition";
+         String url = Statics.BASE_URL+"/api/showCompetition";
          ConnectionRequest request = new ConnectionRequest(url);
          request.setPost(false);
          request.addResponseListener(new ActionListener<NetworkEvent>() {

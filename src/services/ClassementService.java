@@ -84,7 +84,7 @@ public class ClassementService {
     //GET TASKS
     public ArrayList<Classementf> getClassement(int Id_competition , int Id_phase){
         tasks.clear();
-         String url = Statics.BASE_URL+"showClassement/"+ Id_competition + "/"+Id_phase ;
+         String url = Statics.BASE_URL+"/api/showClassement/"+ Id_competition + "/"+Id_phase ;
          ConnectionRequest request = new ConnectionRequest(url);
          request.setPost(false);
          request.addResponseListener(new ActionListener<NetworkEvent>() {

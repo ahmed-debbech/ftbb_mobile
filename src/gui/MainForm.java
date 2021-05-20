@@ -55,6 +55,11 @@ public class MainForm extends com.codename1.ui.Form {
         galery.addActionListener((e) -> {
            new GalerieView().show();
         });
+        Button comp = new Button("Show upcomming matches and scores");
+        comp.setUIID("main_news_but");
+        comp.addActionListener((e) -> {
+           new HomeFormComp().show();
+        });
         Button feedback = new Button("Give us your opinion");
         feedback.setUIID("main_news_but");
         feedback.addActionListener((e) -> {
@@ -65,7 +70,8 @@ public class MainForm extends com.codename1.ui.Form {
         dec.addActionListener((e) -> {
            new HomeFeedback().show();
         });
-        this.addAll(wel,news, store, polls, report, galery, feedback, dec);
+        
+        this.addAll(wel,news, store, polls, report, galery, comp, feedback, dec);
     }
     
     public MainForm(com.codename1.ui.util.Resources resourceObjectInstance) {

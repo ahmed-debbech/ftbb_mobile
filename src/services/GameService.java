@@ -48,7 +48,7 @@ public class GameService {
     }
         public   ArrayList<Game> showGameAction(int Id_competition , int Id_phase  , int Id_Week){
         games.clear();
-            String url = Statics.BASE_URL + "showGame/"+ Id_competition+ "/" + Id_phase+"/"+ Id_Week;
+            String url = Statics.BASE_URL + "/api/showGame/"+ Id_competition+ "/" + Id_phase+"/"+ Id_Week;
         req.setUrl(url);   
         req.addResponseListener(new ActionListener<NetworkEvent>() {
              @Override

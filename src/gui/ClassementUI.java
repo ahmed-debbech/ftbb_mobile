@@ -99,7 +99,7 @@ devGuide.addActionListener(e -> {
         for (Classementf com : classement) {
     
                 EncodedImage placeholder = EncodedImage.createFromImage(Image.createImage(150, 150, comboCompetition.CENTER), true);
-		Image airf_serv = URLImage.createToStorage(placeholder, com.getName_team(), "http://127.0.0.1:8000/uploads/logo/"+com.getLogo_team(), URLImage.RESIZE_SCALE);
+		Image airf_serv = URLImage.createToStorage(placeholder, com.getName_team(), "http://127.0.0.1/ftbb_web/ftbb_web/public/uploads/logo/"+com.getLogo_team(), URLImage.RESIZE_SCALE);
                 
                  data.add(createListEntry(com.getName_team(),airf_serv, com.getNbr_pts(), com.getNbr_pts_P(), com.getNbr_pts_G(), com.getNbr_pts_D(), com.getPts_diff()));
         }
@@ -116,7 +116,7 @@ devGuide.addActionListener(e -> {
         for (Classementf com : classement) {
             System.out.println(com.getName_team());
             EncodedImage placeholder = EncodedImage.createFromImage(Image.createImage(150, 150, comboCompetition.CENTER), true);
-		Image airf_serv = URLImage.createToStorage(placeholder, com.getName_team(), "http://127.0.0.1:8000/uploads/logo/"+com.getLogo_team(), URLImage.RESIZE_SCALE);
+		Image airf_serv = URLImage.createToStorage(placeholder, com.getName_team(), "http://127.0.0.1/ftbb_web/ftbb_web/public/uploads/logo/"+com.getLogo_team(), URLImage.RESIZE_SCALE);
                 
                  data.add(createListEntry(com.getName_team(),airf_serv, com.getNbr_pts(), com.getNbr_pts_P(), com.getNbr_pts_G(), com.getNbr_pts_D(), com.getPts_diff()));
         }
@@ -139,7 +139,7 @@ devGuide.addActionListener(e -> {
         for (Classementf com : classement) {
             System.out.println(com.getName_team());
              EncodedImage placeholder = EncodedImage.createFromImage(Image.createImage(150, 150, comboCompetition.CENTER), true);
-		Image airf_serv = URLImage.createToStorage(placeholder, com.getName_team(), "http://127.0.0.1:8000/uploads/logo/"+com.getLogo_team(), URLImage.RESIZE_SCALE);
+		Image airf_serv = URLImage.createToStorage(placeholder, com.getName_team(), "http://127.0.0.1/ftbb_web/ftbb_web/public/uploads/logo/"+com.getLogo_team(), URLImage.RESIZE_SCALE);
                 
                  data.add(createListEntry(com.getName_team(),airf_serv , com.getNbr_pts(), com.getNbr_pts_P(), com.getNbr_pts_G(), com.getNbr_pts_D(), com.getPts_diff()));
         }
@@ -150,7 +150,7 @@ devGuide.addActionListener(e -> {
     }
     
     }); 
-       getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new HomeForm().showBack());
+       getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new HomeFormComp().showBack());
              System.out.println(comboCompetition);
        this.add(comboCompetition);
         this.add(comboPhase); 

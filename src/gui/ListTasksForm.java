@@ -26,7 +26,7 @@ public class ListTasksForm extends Form{
         tasksListSP.setText(TaskService.getInstance().getTasks().toString());
         
         this.add(tasksListSP);
-        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new HomeForm().showBack());
+        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new HomeFormComp().showBack());
         
     }
 }

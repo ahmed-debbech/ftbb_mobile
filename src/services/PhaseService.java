@@ -72,7 +72,7 @@ public class PhaseService {
     //GET Phase
     public ArrayList<Phase> getPhases(){
         phase.clear();
-         String url = Statics.BASE_URL+"showPhase/";
+         String url = Statics.BASE_URL+"/api/showPhase/";
          ConnectionRequest request = new ConnectionRequest(url);
          request.setPost(false);
          request.addResponseListener(new ActionListener<NetworkEvent>() {

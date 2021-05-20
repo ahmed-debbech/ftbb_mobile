@@ -10,6 +10,7 @@ import com.codename1.ui.Form;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.io.Storage;
 import com.codename1.ui.Component;
+import com.codename1.ui.FontImage;
 import java.util.ArrayList;
 import java.util.List;
 import models.*;
@@ -17,15 +18,15 @@ import models.*;
  *
  * @author khaledguedria
  */
-public class HomeForm extends Form{
+public class HomeFormComp extends Form{
     
         public List<Object> listGames = new ArrayList<>();
         
-    public HomeForm(){
+    public HomeFormComp(){
         
         this.setTitle("Home Form");
         this.setLayout(BoxLayout.y());
-      
+      getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new MainForm().showBack());
         Button addTaskBtn = new Button("Add Competitions");
         Button listCompetitionBtn = new Button("Competitions List");
         Button listClassementBtn = new Button("Classement List");

@@ -64,7 +64,7 @@ public class ListCompetitionForm extends Form{
         DefaultListModel<Map<String, Object>> model = new DefaultListModel<>(data);
         MultiList ml = new MultiList(model);
         this.add( ml);  
-        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new HomeForm().showBack());
+        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new HomeFormComp().showBack());
 
 }
 

@@ -137,7 +137,7 @@ public class GameUI  extends Form {
                 String score_away = Integer.toString(p.getScore_away());
               
                 EncodedImage placeholder = EncodedImage.createFromImage(Image.createImage(150, 150, comboCompetition.CENTER), true);
-		Image airf_serv = URLImage.createToStorage(placeholder, p.getLogoHome(), "http://127.0.0.1:8000/uploads/logo/"+p.getLogoHome(), URLImage.RESIZE_SCALE);
+		Image airf_serv = URLImage.createToStorage(placeholder, p.getLogoHome(), "http://127.0.0.1/ftbb_web/ftbb_web/public/uploads/logo/"+p.getLogoHome(), URLImage.RESIZE_SCALE);
 		ImageViewer imgViewer = new ImageViewer(airf_serv);
                 
                 
@@ -182,7 +182,7 @@ Display.getInstance().sendMessage(new String[] {"ali.dagdoug55@gmail.com"}, "Gam
                 infos.add(cb4);
                     
                 EncodedImage placeholder1 = EncodedImage.createFromImage(Image.createImage(this.getWidth(), this.getWidth() / 5, comboCompetition.CENTER), true);
-		Image airf_serv1 = URLImage.createToStorage(placeholder1, p.getLogoAway(), "http://127.0.0.1:8000/uploads/logo/"+p.getLogoAway(), URLImage.RESIZE_SCALE_TO_FILL);
+		Image airf_serv1 = URLImage.createToStorage(placeholder1, p.getLogoAway(), "http://127.0.0.1/ftbb_web/ftbb_web/public/uploads/logo/"+p.getLogoAway(), URLImage.RESIZE_SCALE_TO_FILL);
 		ImageViewer imgViewer1 = new ImageViewer(airf_serv1);
                 
                
@@ -250,7 +250,7 @@ this.add(comboWeek);
 //this.add(initLabel);
 this.add(ic);
 //this.add(table);
-getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new HomeForm().showBack());
+getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, ev-> new HomeFormComp().showBack());
 }
     
   
