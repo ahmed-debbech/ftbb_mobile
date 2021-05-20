@@ -12,6 +12,7 @@ import com.ftbb.mobile.Report.gui.GalerieView;
 import com.ftbb.mobile.Report.gui.HomeFeedback;
 import com.ftbb.mobile.Report.gui.HomeReport;
 import com.ftbb.mobile.gui.ListProductForm;
+import com.ftbb.mobile.news.gui.ClientArticlesForm;
 
 /**
  * GUI builder created Form
@@ -27,7 +28,7 @@ public class MainForm extends com.codename1.ui.Form {
         Button news = new Button("News");
         news.setUIID("main_news_but");
         news.addActionListener((e) -> {
-            //new ClientArticlesForm().show();
+            new ClientArticlesForm().show();
         });
          Button store = new Button("Store");
         store.setUIID("main_news_but");
